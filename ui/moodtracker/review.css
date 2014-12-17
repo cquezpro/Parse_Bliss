@@ -1,0 +1,42 @@
+div.weekpicker {
+
+}
+
+tr.week {
+  height: 30px;
+}
+
+.no-data {
+  text-align: center;
+  position: relative;
+  top: 30%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  font-size: 22px;
+  display: inline-block;
+  /* Make glyphs non selectable */
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.weekpicker-dates {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  width: 335px;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+#TrackerReviewPage select {
+  min-width: 100px;
+}
+
+#chart-type-selector {
+  float: right;
+  margin-top: -35px;
+}

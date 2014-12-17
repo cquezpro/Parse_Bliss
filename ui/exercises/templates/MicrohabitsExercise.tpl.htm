@@ -1,0 +1,60 @@
+<div id="MicrohabitsExercise" class="default">
+  <div class="inner clearfix"> 
+    <header class="form-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+      <center><h2>bliss</h2></center>
+    </header>
+    
+    <figure class="main-image">
+      <img src="<%= Bliss.getLocalUrl('ui/exercises/images/Step.jpg')  %>">
+      <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+      <figcaption class="text-white">Microhabits</figcaption>
+    </figure>
+
+    <div class="content">
+      <div class="inner clearfix">
+        <div class="container clearfix no-headings">
+          <% if (typeof createdAt != 'undefined') { %>
+            <h3><%= Bliss.formatDate(createdAt) %></h3>
+          <% } %>
+
+          <b>What new behavior do you want to add to your life?</b>
+          <textarea name="goal" index="" ><%= goal %></textarea>
+          <p class="help">Examples: Exercise more, meditate, learn a language, get organized, write a novel, read literature, practice guitar.</p>
+
+          <b>What benefits will you get if you do this consistently?</b>
+          <textarea name="benefits" index="" ><%= benefits %></textarea>
+          <p class="help">Example: Exercising consistently will give me more energy, less body fat, a better mood and better health. I could be the star player on my soccer team. I'll look better on the beach.  I'll set a good example for my little brother.</p>
+
+          <b>What's the best time for you to do it?</b>
+          <select name="time" id="time">
+            <option value="" <% time == '' ? print('selected="selected"') : '' %>>- Select Time -</option>
+            <% $.each(time_options, function(key, time_option) { %>
+            <option value="<%= key %>" <% time == key ? print('selected="selected"') :'' %>> <%= time_option %></option>
+            <% }) %>
+            <option value="other" <% time == 'other' ? print('selected="selected"') :'' %>> Other</option>
+          </select>
+          <div id="time-other-container">
+            <label for="time_other"><b>Other:</b></label>
+            <input id="time_other" type="text">
+          </div>
+          <p class="help">Picking a specific time helps wire the habit into your brain.</p>
+          
+          <p><b>Now create a microhabit.</b> <em>It should be easy and take 1 minute or less to complete.</em> It could be the first thing you would do when starting this activity. 
+          <textarea name="microhabit" index="" ><%= microhabit %></textarea>
+          <p class="help">Examples: Change into my running clothes, meditate for 1 minute, read one paragraph of my book, tune my guitar.</p>
+        </div>
+        <div class="container clearfix">
+          <h3>Remember!</h3>
+          <p>Your <em>only</em> obligation is to complete the 1-minute microhabit. If your microhabit is to put on your running clothes, you don't actually have to go running! Anything else you do is extra credit. As you continue to complete your microhabit, you'll find it will grow larger and larger over time.
+        </div>
+    </div>
+    </div>
+    <footer id="footer">
+      <div class="btn-center">
+      <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+      </div>
+    </footer>
+  </div>
+</div>

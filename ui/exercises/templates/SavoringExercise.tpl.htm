@@ -1,0 +1,37 @@
+<div id="SavoringExercise" class="default">
+  <div class="inner clearfix">
+    <header class="form-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+      <center> <h2>bliss</h2></center> 
+    </header>
+    <figure class="main-image">
+        <img src="<%= Bliss.getLocalUrl('ui/exercises/images/Tea.jpg')  %>">
+        <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+        <figcaption class="title">Savoring</figcaption>
+    </figure>
+
+    <div class="content">
+      <div class="inner clearfix">
+      <div class="container clearfix no-headings">
+        <% if (typeof createdAt != 'undefined') { %>
+          <h3><%= Bliss.formatDate(createdAt) %></h3>
+        <% } %>
+        <p><span class="first">Set</span> aside 10 minutes for an activity you enjoy. It could be a favorite food, a cup of coffee, a hot shower, or a walk outside. Put your phone on silent and remove all other distractions so you can focus totally on the experience.</p><br>
+        <p><span class="first">Bring</span> your attention to your senses. How many different sensations can you detect? Note in as much detail as possible the sights, sounds, smells, tastes and texture of the experience.</p><br>
+        <p><span class="first">Then</span> write a short paragraph below as is you were selling the experience to someone else, enticing them to give it a try. Use vivid language and imagery in your description.</p><br>
+        <p class="example">Example: Coffee and lemon cake. The lemon cake tastes of lemon zest, with a sweet, creamy icing. The coffee is strong and slightly bitter, providing a perfect compliment to the sweetness of the lemon cake. I chew slowly, letting the flavors unfold on my tongue and then take a sip of the still-warm coffee which explodes over my tongue with a jolt of caffeine that brings a smile to my face. Delicious.</p><br />
+      </div>
+
+      <div class="container clearfix">
+        <textarea name="SavoringExercise" index="" ><%= SavoringExercise %></textarea>
+      </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="btn-center">
+        <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+      </div>
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,344 @@
+/**
+ * 7 day challenge page
+ * 
+ **/
+.challenge-page{
+  background-color: #fff;
+ 
+}
+.challenge-page:after{
+ content: "";
+ background: url('/ui/forms/images/nature-bg.jpg') no-repeat scroll top center;
+ background-attachment: fixed;
+ background-size: 100% 100%;
+ top: 0;
+ left: 0;
+ bottom: 0;
+ right: 0;
+ position: absolute;
+ z-index: -1;
+}
+.challenge-page .content{
+  background: #ffffff;
+  width: 768px;
+  margin: 2em auto 0;
+}
+
+.challenge-page .content .container .challenge-header h2{
+  margin-bottom: 1em;
+  font-size: 24px;
+  margin-top: 0;
+}
+.challenge-page .content .container .challenge-header h1{
+  margin-top: 1em;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.challenge-page .content .container .challenge-header h1,
+.challenge-page .content .container .challenge-header h2{
+  font-weight: normal;
+  color: #808080;
+}
+
+.challenge-page .content .container .challenge-progress{
+  background: #048E6F;
+  color: #fff;
+}
+
+.challenge-page .content .container .step-two-details .inner{
+  padding: 1.5em;
+}
+
+.challenge-page .content .header-container .inner h2{
+  margin: 0 0 1em;
+  background: #048E6F;
+  color: #fff;
+  padding: 10px 1em;
+  float: left;
+  border-radius: 0 0 5px 0;
+}
+
+.challenge-page .content .container .step-two-details .col-1 .inner,
+.challenge-page .content .container .step-two-details .col-2 .inner{
+  padding-top: 10px;
+}
+
+.challenge-page .content .container .step-two-details .col-2 .inner .field input[type="checkbox"]{
+  vertical-align: top;
+  margin-right: 8px;
+}
+
+.challenge-page .content .container .step-two-details .col-2 .inner .field label{
+  font-size: 14px;
+  opacity: 0.85;
+}
+.challenge-page .content .container .step-two-details .col-2 .inner .field{
+  margin-bottom: 5px;
+}
+
+.challenge-page .content .container .step-two-details{
+  border-bottom: 1px dotted #e6e6e6;
+  border-top: 1px dotted #e6e6e6;
+  margin-bottom: 1em;
+}
+
+.challenge-page .content .container .step-two-details .col-1 .inner{
+  border-right: 1px dotted #e6e6e6;
+  min-height: 145px;
+}
+
+.challenge-page .content .container .step-two-details .col-1 .inner p{
+  font-size: 14px;
+}
+
+ 
+.challenge-page .container > .inner{
+  padding: 1.5em;
+}
+
+.challenge-page .content .container.additional .inner{
+  padding-top: 0;
+}
+
+
+.challenge-page .content .container.additional .inner strong{
+  font-size: 14px;
+}
+
+.challenge-page textarea{
+  width: 100%;
+  resize: none;
+  height: 133px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+div[class*="col-"]{
+  float: left;
+  width: 50%;
+}
+
+.challenge-page .content .container .challenge-progress .progress-ball,
+.challenge-page .content .container .challenge-progress .progress-details h3{
+  font-family: quicksandregular;
+  color: #fff;
+  font-weight: normal;
+}
+
+.challenge-page .content .container .challenge-progress .progress-details .inner{
+  padding-right: 7em;
+}
+
+.challenge-page .content .container .challenge-progress .progress-details h3{
+  text-align: center;
+  line-height: 1.5;
+  font-size: 30px;
+  margin: 0;
+}
+
+
+.challenge-page .content .container .challenge-progress .progress-ball{
+  text-align: center;
+  margin: 1.5em 0;
+  
+}
+
+.challenge-page .content .container .challenge-progress .progress-ball .inner{
+  padding-left: 5em;
+}
+
+.challenge-page .content .container .challenge-progress .progress-ball > div,
+.challenge-page .content .container .challenge-progress .progress-ball > div input{
+  position: relative;
+}
+
+.challenge-page .content .container .challenge-progress .progress-details{
+  padding: 2.5em 0;
+  position: relative;
+}
+
+.challenge-page .content .container .challenge-progress .progress-details .inner:after{
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #048E6F;
+  border-width: 30px;
+  margin-left: -30px;
+}
+
+.challenge-page .content .container .challenge-details .inner{
+  padding: 1.5em 0;
+ 
+}
+
+.challenge-page .content .container .challenge-details ul{
+  list-style-position: inside;
+  list-style: none;
+  margin-left: 1.5em;
+}
+
+.challenge-page .content .container .challenge-details ul li{
+  font-family: open_sansregular;
+  line-height: 1.5;
+  font-size: 14px;
+  background: url('/ui/forms/images/challenge-list.png') no-repeat scroll left center transparent;
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.challenge-page .content .container .take-the-challenge .inner{
+  padding: 0 10px 2em;
+  border-left: 1px solid #b3b3b3;
+}
+
+.challenge-page .content .container .take-the-challenge .inner p{
+  font-family: quicksandbold;
+  margin: 45px 0 10px;
+  text-align: center;
+}
+
+.challenge-page .content .container .take-the-challenge .inner .btn-block{
+  margin: 15px 0;
+}
+
+.challenge-page .content .container .take-the-challenge .inner .BlissAnonymousLink{
+  color: #048e6f;
+  text-decoration: underline;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  font-family: QuickSandRegular;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+/* Styles */
+  .login-page .content{
+    width: 260px;
+  }
+  div[class*="col-"]{
+    width: 98%;
+  }
+  .challenge-page .content{
+    width: 98%;
+  }
+  .challenge-page .content .container .challenge-progress .progress-ball .inner{
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width : 768px){
+  .challenge-page .content{
+    width: 98%;
+  }
+  div[class*="col-"]{
+    width: 100%;
+  }
+  .challenge-page .content .container .challenge-progress .progress-ball{
+    text-align: center;
+    margin: 2.5em 0 0;
+  }
+  .challenge-page .content .container .challenge-progress .progress-ball .inner{
+    padding: 0;
+  }
+
+  .challenge-page .content .container .challenge-progress .progress-details{
+    padding: 1.5em 0 3em;
+    margin-bottom: 0;
+  }
+  .challenge-page .content .container .challenge-progress .progress-details .inner{
+    padding: 0 0;
+  }
+  .challenge-page .content .container .challenge-progress .progress-ball > div{
+    position: inherit;
+  }
+  .challenge-page .content .container .take-the-challenge .inner{
+    padding: 0 10px 2em;
+    border-left: none;
+    border-top: 1px solid #b3b3b3;
+  }
+  .challenge-page .content .container .challenge-details .inner{
+    padding-top: 3.5em;
+  }
+}
+
+#SevenDayChallenge img{
+  max-width: 100%;
+}
+
+@media only screen and (max-width : 480px){
+  .challenge-page:after{
+   content: "";
+   background: url('/pages/images/nature-bg-mobile.jpg') no-repeat scroll top center;
+   background-attachment: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   position: absolute;
+   z-index: -1;
+  }
+  .challenge-page .content .container .challenge-progress .progress-details .inner:after{
+    top: 99%;
+  }
+  .challenge-page .content .container .challenge-progress .progress-ball .inner{
+    padding: 0;
+  }
+  .congrats .social-footer a.email-to-friend{
+    margin-top: 5px;
+  }
+}
+
+.congrats h1,
+.congrats h2{
+  font-family: open_sansregular;
+  color: #048e6f;
+}
+
+.congrats .container{
+  padding: 15px 40px;
+  background: #f9f9f9;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.congrats .container p{
+  font-size: 16px;
+}
+
+.congrats .social-footer{
+  padding: 15px 40px;
+}
+
+.congrats .social-footer p.help{
+  font-size: 16px;
+}
+
+.congrats .social-footer a.email-to-friend{
+  text-decoration: none;
+  color: #139577;
+  border: 1px solid #e6e6e6;
+  padding: 6px 10px;
+  display: inline-table;
+  vertical-align: top;
+}
+
+.congrats .social-footer a.email-to-friend img,
+.congrats .social-footer a.email-to-friend span{
+  display: inline-table;
+  vertical-align: top;
+}
+
+.congrats .social-footer a.email-to-friend img{
+  margin-right: 5px;
+}
+
+.congrats .social-footer a.email-to-friend span{
+  font-size: 12px;
+}

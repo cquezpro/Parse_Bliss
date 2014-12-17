@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+    <script type="text/javascript" src="/lib/parse.js"></script>
+    <script type="text/javascript" src="/lib/extend.js"></script>
+    <script type="text/javascript" src="/classes/Storage.js"></script>
+    <script type="text/javascript" src="/classes/Track.js"></script>
+    <script type="text/javascript" src="/classes/TrackSlider.js"></script>
+    <script type="text/javascript" src="/classes/TrackRadios.js"></script>
+    <script type="text/javascript" src="/classes/TrackEasyRadios.js"></script>
+    <script type="text/javascript" src="/Bliss.js"></script>
+    <script type="text/javascript" src="/config.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="/classes/User.js"></script>
+    <script type="text/javascript" src="/classes/SplitTest.js"></script>
+    <script>
+      Parse.initialize(Bliss.appId, Bliss.javascriptId);
+      User(function(){
+        var obj = Parse.Object.extend("parseTrack");
+        var query = new Parse.Query(obj);
+        var parseData = []; 
+        Bliss.log('current user');
+        Bliss.log(User.current().id);
+  //        query.equalTo("user", User.current().id);
+        google.load("visualization", "1", {packages:["corechart", "calendar"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var happinessByDay = {};
+          query.find({
+            success: function(results) {
+              Bliss.log(results);
+              for (var i = 0; i < results.length; i++) { 
+                var submitted = results[i].get('submitted')*1000;
+                if (submitted) {
+                  var day = new Date(submitted);
+                  var midnight = new Date(day.getFullYear(), day.getMonth(), day.getDate()).getTime();
+                  var happiness = results[i].get('happiness');
+  //                  parseData.push([midnight, results[i].get('happiness')]);
+                  if (happinessByDay[midnight]) {
+                    happinessByDay[midnight].push(happiness);
+                  }
+                  else {
+                    happinessByDay[midnight] = [happiness];
+                  }
+                }
+              }
+              $.each(happinessByDay, function(time, values) {
+                Bliss.log(time);
+                Bliss.log('time');
+                Bliss.log(new Date(time));
+                //Take the average of values array
+                average = values.reduce(function(a, b) { return a + b }) / values.length ;
+                parseData.push([new Date(Number(time)), average]);
+
+              });
+
+
+              Bliss.log('parseData');
+              Bliss.log(parseData); 
+              var dataTable = new google.visualization.DataTable();
+              dataTable.addColumn({ type: 'date', id: 'Date' });
+              dataTable.addColumn({ type: 'number', id: 'Happiness' });
+              dataTable.addRows(parseData);
+              var chart = new google.visualization.Calendar(document.getElementById('chart_div'));
+
+              var options = {
+                title: 'Happiness over time',
+                curveType: 'function',
+                noDataPattern: {
+                  backgroundColor: '#FFF',
+                  color: '#FFF'
+                }
+              };
+              
+              chart.draw(dataTable, options);
+
+              },
+              error: function(error) {
+                alert("Error: " + error.code + " " + error.message);
+              }
+          });
+        }
+
+
+      });
+    </script>
+    <div id="chart_div" style="width: 1600px; height: 800px;"></div>
+  </body>
+</html>

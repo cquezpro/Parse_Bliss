@@ -1,0 +1,391 @@
+html {
+  padding: 0;
+  margin: 0 auto;
+  box-shadow: none;
+}
+
+a{
+  text-decoration: none;
+}
+body {
+  padding: 0;
+  margin: 0;
+  border: none;
+  min-width: 250px;
+  max-width: 100%;
+}
+
+span[class*="icon"]{
+  padding: 0px 10px 0px 12px;
+  margin: 0;
+}
+
+
+.header {
+  background-color: #18bb9b;
+  width: 100%;
+  padding: 5px 0;
+
+
+}
+.exercise-container{
+  border-bottom: none;
+}
+.logo {
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  font-family: quicksandregular;
+}
+.exercise, .dev {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  font-size: 12px;
+  color: #27b99a;
+  padding: 10px 0;
+  border-bottom: 1px solid #EEE;
+  display: block;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+.exercise, .dev > span{
+  margin: 0 10px 0 0px;
+  padding-right: 0;
+}
+
+.exercise, .dev span + span{
+  font-size: 11px;
+}
+
+.exercise.new {
+  background-color: #98FAE5;
+}
+
+
+.dev {
+  color: white;
+}
+
+.exercise{
+  padding: 15px 0;
+}
+
+.exercise:last-child{
+  padding: 15px 0;
+  border-bottom: none;
+}
+
+.exercise .name {
+  display: inline-table;
+  vertical-align: baseline;
+  padding: 0;
+  margin-left: 10px;
+  width: 78%;
+
+}
+
+.exercise .name span.new{
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+span.icon-feedback {
+    background: url('/images/feedback.png') no-repeat scroll top center transparent;
+    display: inline-table;
+    margin: 0 8px;
+    vertical-align: middle;
+    padding: 6px 9px 6px 9px;
+} 
+
+.dev {
+  padding: 5px;
+  padding-left: 10px;
+}
+.footer{
+  background: #555;
+  font-family: arial;
+}
+
+.exercise:hover {
+  background: #22a184;
+  color: white;
+}
+
+div.dev {
+  background-color: #248F8F;
+  padding: 10px 0;
+}
+
+.dev:hover {
+  background-color: #adffed;
+}
+
+.devtool {
+  margin-top: 3px;
+  margin-right: 5px;
+  float: right;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+div.devtool {
+  font-size: 10px;
+}
+
+div.clear-schedule {
+  background-color: #27b99a;
+  color: white;
+  padding: 5px;
+}
+
+div.clear-schedule:hover {
+  background-color: #22a184;
+  cursor: pointer;
+}
+
+.footer {
+  color: #fff;
+}
+
+.popup-actions{
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+
+.inverted > a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  display: inline;
+}
+
+.popup-actions a span{
+  font-size: 14px;
+}
+
+.popup-actions:hover{
+  background: #222;
+}
+.popup-actions:last-of-type{
+  border-bottom: none;
+}
+.inverted{
+  box-shadow: none;
+  outline: none;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  background-color: #555;
+  color: #fff;
+  margin: 0;
+  font-size: 11px;
+  border-bottom: 1px solid #222;
+}
+.day-streak {
+  background-color: orange;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+/**
+ *  Challenge pop up styling
+ *
+ */
+.today-and-challenge-popup .messages{
+  height: 15px;
+ }
+.today-and-challenge-popup .day-streak{
+  background: #ff6400;
+  color: #fff;
+}
+.today-and-challenge-popup .progress-container{
+  background: #49caa3;
+  padding: 10px 5px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+.today-and-challenge-popup .progress-container .inner:after{
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 47%;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #49caa3;
+  border-width: 10px;
+  margin-left: 0;
+  top: 100%;
+}
+
+.today-and-challenge-popup .progress-container .inner h3{
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-family: QuicksandRegular;
+  font-weight: normal;
+}
+
+.today-and-challenge-popup .progress-container .progress-ball, .today-and-challenge-popup .progress-status{
+  display: inline-table;
+  color: #fff;
+  vertical-align: top;
+}
+
+.today-and-challenge-popup .progress-container .progress-status{
+  font-family: QuickSandRegular;
+  font-size: 18px;
+}
+
+.today-and-challenge-popup .progress-container .progress-ball{
+  padding: 0 15px;
+}
+
+.today-and-challenge-popup .progress-container .progress-status .today{
+  text-align: center;
+  margin: 5px 0 10px;
+  font-size: 16px;
+}
+
+.today-and-challenge-popup .progress-container .progress-status .days-complete,
+.today-and-challenge-popup .progress-container .progress-status .today{
+  font-family: 'open_sansregular';
+  font-weight: bold;
+}
+
+.today-and-challenge-popup .progress-container .progress-status .days-complete{
+  font-size: 12px;
+}
+
+.today-and-challenge-popup .exercise-container .challenge-day{
+  font-family: 'open_sansregular';
+  color: #18bb9b;
+  font-size: 14px;
+  text-align: center;
+  padding: 0;
+}
+
+.today-and-challenge-popup .exercise-container .name{
+  font-size: 14px;
+  font-family: 'quicksandregular';
+  color: #18bb9b;
+  text-align: center;
+  margin: 0 0 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid #cccccc;
+  width: 93%;
+}
+
+.today-and-challenge-popup .exercise-container{
+  display: none;
+  text-align: center;
+}
+
+.today-and-challenge-popup .exercise-container .pencil-icon-wrap,
+.today-and-challenge-popup .exercise-container .date-desc-group{
+  display: inline-table;
+  vertical-align: top;
+  text-align: left;
+}
+
+.today-and-challenge-popup .exercise-container .pencil-icon-wrap{
+  width: 20%;
+  text-align: center;
+}
+
+.today-and-challenge-popup .exercise-container .pencil-icon-wrap .pencil-circle{
+  border-radius: 50%;
+  width: 30px;
+  background-color: #18bb9d;
+  margin: 0 10px;
+  padding: 8px 0;
+}
+
+.today-and-challenge-popup .exercise-container .pencil-icon-wrap .pencil-circle .icon-pencil{
+  padding: 10px 0;
+  margin: 0;
+  color: #fff;
+
+}
+
+.today-and-challenge-popup .exercise-container .date-desc-group{
+  width: 78%;
+  position: relative;
+}
+
+.today-and-challenge-popup .exercise-container .status{
+  color: #fff;
+  display: inline-table;
+  margin-left: 25px;
+  background: #18bb9d;
+  border-radius: 13px;
+  padding: 0px 5px 0px;
+  right: 5px;
+}
+
+.today-and-challenge-popup .exercise-container .status span{
+  margin: 0;
+  padding: 0;
+}
+
+.today-and-challenge-popup .exercise-container .status span.icon-checkmark{
+  font-size: 8px;
+}
+.today-and-challenge-popup .exercise-container .status span + span{
+  font-size: 10px;
+  font-family: 'open_sansregular';
+  line-height: 2;
+  letter-spacing: .3px;
+  font-weight: bold;
+}
+
+
+.today-and-challenge-popup .exercise-container .exercise{
+  border-bottom: none;
+
+}
+
+.today-and-challenge-popup .exercise-container .date-desc-group .exercise-description{
+  font-size: 13px;
+  font-family: 'quicksandregular';
+  text-align: left;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.today-and-challenge-popup .exercise-container .date-desc-group .exercise-date,
+.today-and-challenge-popup .exercise-container .date-desc-group .exercise-description{
+  color: #4d4d4d;
+}
+
+.today-and-challenge-popup .exercise-container .date-desc-group .exercise-date{
+  font-size: 11px;
+  margin-bottom: 5px;
+  display: inline-table;
+  vertical-align: top;
+  margin: 5px 0 12px;
+
+}
+
+.today-and-challenge-popup .exercise:hover{
+  background: #f9f9f9;
+}
+
+.today-and-challenge-popup .exercise:hover .exercise-container .date-desc-group .exercise-date,
+.today-and-challenge-popup .exercise:hover .date-desc-group .exercise-description,
+.today-and-challenge-popup .exercise:hover .exercise-container .name,
+.today-and-challenge-popup .exercise:hover .exercise-container .pencil-icon-wrap{
+  opacity: 0.7;
+}

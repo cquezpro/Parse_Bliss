@@ -1,0 +1,43 @@
+<div id="ExtendedTrackerExercise" class="default">
+  <div class="inner">
+    <header class="form-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+      <center><h2>bliss</h2></center>
+    </header>
+    
+    <div class="content">
+      <div class="inner clearfix">
+      <div class="container clearfix">
+      <div class="short-intro">
+      
+      <h1 class="title center">Mood Inventory</h1>
+            <p class="text">This information is used to help you track your progress, become more aware of your moods, and determine which exercises are most effective for you.</p>
+            
+
+           </div>
+            <% templateVars = arguments[0] %>
+            <% $.each(sliders, function(key, slider) { %>
+            
+            
+            <fieldset>
+               <legend><%= slider.question %></legend>
+                 <% for(x=1;x<=5;x++) { %>
+                 <input type="radio" id="<%= slider.name + x %>" name="<%= slider.name %>" value="<%= mood_options[x] %>" 
+                 <% if (templateVars[slider.name] == mood_options[x]) { print('checked') } %> > 
+                 <label for="<%= slider.name + x %>"><%= mood_options[x] %></label></br>
+                 <% } %>
+            </fieldset> 
+            <% }) %>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer id="footer"> 
+      <div class="btn-center">
+        <button id="submitButton" class="btn btn-default">Submit</button>
+      </div>
+    </footer>
+  </div>
+</div>

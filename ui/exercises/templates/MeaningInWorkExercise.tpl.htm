@@ -1,0 +1,39 @@
+<div id="MeaningInWorkExercise" class="default">
+  <div class="inner clearfix">
+    <header class="form-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+      <center><h2>bliss</h2></center>
+    </header>
+    <figure class="main-image">
+        <img src="<%= Bliss.getLocalUrl('ui/exercises/images/Tailor.jpg')  %>">
+        <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+        <figcaption>Meaning In Work</figcaption>
+    </figure>
+    <div class="content">
+      <div class="inner clearfix">
+        <div class='attribution'>photo by <a target="_blank" href='https://www.flickr.com/photos/carsten_tb/8154947468/'>Carsten ten Brink</a></div>
+        <div class="container clearfix">
+          <% if (typeof createdAt != 'undefined') { %>
+            <h3><%= Bliss.formatDate(createdAt) %></h3>
+          <% } %>
+        </div>
+        <div class="container clearfix">
+          <p><span class="first">How</span> does your work help other people? Consider both the customers you serve and your co-workers.</p> 
+          <textarea id="help_others" ><%= help_others %></textarea>
+          <p class="help">Example: As a grocery store cashier, I interact with over 100 people a day. Taking the time to be friendly and helpful with each customer makes each one 
+          a little happier. Maybe they leave the store feeling a little better, and they're in a slightly better mood when they meet their family. Checking people out quickly saves them time and puts them in a better mood. Handling problems makes my manager's life easier.
+        </div>
+        <div class="container clearfix">
+          <p><span class="first">What</span> unique skills and strengths can you use in your work? What opportunities for learning does your work give you?</p> 
+          <textarea id="strengths" ><%= strengths %></textarea>
+          <p class="help">Example: I'm good at connecting with people. I can use that give customers a better experience and put them in a better mood. Sometimes one good interaction makes all the difference. When things get busy, it gives me an opportunity to learn how to stay calm and happy under pressure, which is a valuable skill to have that could help me in many other aspects of my life.</div>
+      </div>
+    </div>
+  <footer id="footer">
+    <div class="btn-center">
+      <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+    </div>
+  </footer>
+  </div>
+</div>

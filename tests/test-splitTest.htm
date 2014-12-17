@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="/Bliss.js"></script>
+    <script type="text/javascript" src="/config.js"></script>
+    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+    <script type="text/javascript" src="/lib/parse.js"></script>
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/classes/Track.js"></script>
+    <script type="text/javascript" src="/classes/Storage.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="/classes/User.js"></script>
+    <script type="text/javascript" src="/classes/SplitTest.js"></script>
+    <script>
+      Bliss.log(Bliss);
+      Parse.initialize(Bliss.appId, Bliss.javascriptId);
+      User(function(){
+  //        Storage.clear('test-valuesTest');
+        new SplitTest('trackerType').test(
+            {name: 'slider', 'callback': function() { g = "slide baby slide"; }},
+            {name: 'radios', 'callback': function() { g = "TV on the radio"; }},
+            {name: 'third', 'callback': function() { g = "I'm a charm.";}}
+        ); 
+        Bliss.log(g);
+
+        var theWord = new SplitTest('valuesTest').values([13, 'Boogie', 'Eponymous']);
+        Bliss.log('The word is '+ theWord);
+
+
+
+      });
+    </script>
+  </body>
+</html>

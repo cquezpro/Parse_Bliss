@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/dev/storage.css" type="text/css" media="all">
+    <!--Make page fit in any screen sizes-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+      <!-- Stylesheets -->
+  <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/reset.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/exercises/exercises.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/form.css" type="text/css" media="all">
+  <!-- Core Lib -->
+  <script type="text/javascript" src="/lib/jquery.js"></script>
+  <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+  <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+  <script src="/lib/parse.js"></script>
+  <script src="/lib/moment.min.js"></script>
+  <script type="text/javascript" src="/lib/underscore.js"></script>
+  <script type="text/javascript" src="/lib/Interface.js"></script>
+  <script type="text/javascript" src="/lib/extend.js"></script>
+  <!-- Config -->
+  <script type="text/javascript" src="/Bliss.js"></script>
+  <script type="text/javascript" src="/config.js"></script>
+  <!-- Core Classes -->
+  <script type='text/javascript' src='/models/AbstractCollection.js'></script>
+  <script type='text/javascript' src='/models/ParseCollection.js'></script>
+  <script type='text/javascript' src='/models/StorageModel.js'></script>
+  <script type='text/javascript' src='/models/SettingsModel.js'></script>
+  <script type='text/javascript' src='/models/ChromeStorageCollection.js'></script>
+  <script type='text/javascript' src='/classes/Storage.js'></script>
+  <script type='text/javascript' src='/classes/User.js'></script>
+  <script type="text/javascript" src="/classes/Trainer.js"></script>
+  <script type='text/javascript' src='/dev/setDate.js'></script>
+  <script type='text/javascript' src='/lib/datetime-picker/jquery.datetimepicker.js'></script>
+  <link rel="stylesheet" href="/lib/datetime-picker/jquery.datetimepicker.css" type="text/css" media="all">
+  </head>
+  <style>
+    #SetDateForm .content {
+      min-height: 500px;
+    }
+    #SetDateForm #date {
+      width: 500px;
+      position: absolute;
+      left: 50%;
+      margin-top: 20px;
+      margin-left: -150px;
+    }
+    #SetDateForm p {
+      padding: 20px;
+    }
+    
+  </style>
+  <body>
+    <div id="SetDateForm" class="inverse">
+      <header class="inverse-header">
+        <div class="inner clearfix">
+          <center>
+          <a href="/">
+            <img src="/ui/forms/images/logo.png" alt="Bliss Logo"> 
+          </a>
+          </center>
+        </div>
+      </header>
+      <div class="content">
+        <p>
+          This form allows editing the 'current' date that Bliss uses for testing purposes.  It modifies the time
+          returned by Bliss.getTime() so that we can test scheduling of exercises.
+        </p>
+        <p>
+          When getting the current time in your code you should always use Bliss.getTime() so that we can easily test time dependent functionality.
+        </p>
+        <div id='date'>
+          <input type="text" id="datetimepicker"/>
+          <br><br>
+          <div><b>Current date:</b></div>
+          <div id='current_date'></div>
+          <br>
+          <div><b>Bliss date:</b></div>
+          <div id='bliss_date'></div>
+          <br>
+          <div><b>Install date:</b></div>
+          <div id='install_date'></div>
+          <br>
+          <button id='reset_offset'>Set Bliss time to real time</button>
+        </div>
+      </div>
+      <footer id="footer">
+      </footer>
+    </div>
+  </body>
+</html>

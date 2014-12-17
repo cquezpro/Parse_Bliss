@@ -1,0 +1,5 @@
+Bliss.appId         = 'sx7hsF91DCqPw9M8gydXzG559wwfQIZivUk2Obdg';
+Bliss.javascriptId  = 'Jf2CPqY1zkfMWVVS3xe4BNBkcIAiIfR2zZdDPGgD';
+Bliss.enableLogging = false;
+Bliss.dev = false;
+Bliss.website = 'http://bliss31.com';

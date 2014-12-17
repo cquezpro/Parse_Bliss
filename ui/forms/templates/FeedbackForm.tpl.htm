@@ -1,0 +1,53 @@
+<div id="FeedbackForm" class="default">
+  <header class="form-header">
+    <center><h2>bliss</h2></center>
+  </header>
+  <div class="content">
+    <div class="inner clearfix">
+    
+    <div class="container clearfix">
+      <h1 class="title">Feedback</h1>
+
+      <p><em>Our goal is to help as many people as possible live happier, more successful lives. Your feedback helps us make it happen.</em></p>
+      
+    </div>
+    <div class="container clearfix">
+       <div class="field-track-container">
+         
+         <div class="slider-container" >
+          
+           <div class="valuebox">
+              <h3>How would you rate Bliss?</h3>
+
+              <div class="inner clearfix">
+                <span class="icon-bubbles"></span>
+                <div class="divider"></div>
+                <div class="slide-value">5.0</div>
+                
+              </div>
+            </div>
+          <div class="divider"></div>
+          <div class="status-container clearfix">
+           <span class="status left">Terrible</span>
+           <span class="status right">Excellent</span>
+           </div>
+           <input id="rating" type="range" value="<%= rating * 10 %>" min="0" max="100" />
+           
+           <div class="help">You can also use your keyboard to control the tracker</div>
+         </div>
+       </div>
+      <div class="field-container">
+        <div class="Feedback">
+          <label for="Feedback"><b>How can we make Bliss better?</b></label>
+          <textarea id="feedback"><%= feedback %></textarea>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <footer id="footer">
+    <div class="btn-center">
+    <button id="submitButton" class="btn btn-default">Submit</button>
+    </div>
+  </footer>
+</div>

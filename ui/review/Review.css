@@ -1,0 +1,68 @@
+/** Force scroll bar to prevent horizontal jumping **/
+html {
+  overflow-y: scroll;
+}
+
+.review.content h1{
+	margin-bottom: 5px;
+}
+
+.review.content h1 + p{
+	font-family: QuickSandLight;
+	margin-right: 158px;
+}
+
+.review.content section.title-container{
+	text-align: center;
+}
+
+.review.content section.title-container h2{
+	margin-bottom: 0;
+}
+
+.review.content section+center{
+	margin-top: 2em;
+	margin-bottom: 1.5em;
+}
+
+.review.content .actions{
+	display: inline;	
+}
+
+.review.content .actions a{
+	margin-right: 10px;
+}
+.review.content p{
+	margin-bottom: 1.5em;
+	line-height: 1.5;
+}
+
+.review.content center+h3{
+	margin-top: 0;
+	margin-bottom: 2em;
+}
+
+.review.content strong{
+	line-height: 2;
+}
+@media only screen and (max-width : 1024px){
+	.default figure img.icon {
+	  left: 48%;
+	  right: 48%;
+	}
+}
+
+@media only screen and (max-width : 320px){
+	.default figure img.icon {
+	  left: 40%;
+	  right: 40%;
+	}
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+/* Styles */
+	.default figure img.icon {
+	  left: 43%;
+	  right: 43%;
+	}
+}

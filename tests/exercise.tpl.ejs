@@ -1,0 +1,8 @@
+<h2><%= exercise.name +" - "+ moment.unix(Bliss.getTime()).format("MMM DD YYYY") %></h2>
+<b><%= exercise.is_scheduled ? 'Scheduled' : 'Not Scheduled' %></b></br>
+<b>last featured:</b> <%= moment.unix(exercise.last_featured).format("MMM DD YYYY") %></br>
+<b>last submit:</b> <%= exercise.last_submit ? moment.unix(exercise.last_submit).format("MMM DD YYYY") : 'never' %><br>
+<b>scheduled time:</b> <%= moment.unix(exercise.scheduled_time).format("MMM DD MM:SSA YYYY") %><br>
+<b>repeat:</b> <%= exercise.repeat %><br>
+<b>delay:</b> <%= exercise.delay %><br>
+<pre><%= JSON.stringify(exercise) %></pre>

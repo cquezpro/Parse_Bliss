@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+      <!-- Stylesheets -->
+  <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/reset.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/exercises/exercises.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/form.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/content_script.css" type="text/css" media="all">
+  <!-- Dev -->
+  <script type="text/javascript" src="/dev/stacktrace.js"></script>
+  <!-- Core Lib -->
+  <script type="text/javascript" src="/lib/jquery.js"></script>
+  <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+  <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+  <script src="/lib/parse.js"></script>
+  <script src="/lib/moment.min.js"></script>
+  <script type="text/javascript" src="/lib/underscore.js"></script>
+  <script type="text/javascript" src="/lib/Interface.js"></script>
+  <script type="text/javascript" src="/lib/extend.js"></script>
+  <!-- Config -->
+  <script type="text/javascript" src="/Bliss.js"></script>
+  <script type="text/javascript" src="/config.js"></script>
+  <!-- Plugins -->
+  <script type="text/javascript" src="/lib/jquery.autosize.js"></script>
+  <script type="text/javascript" src="/lib/jquery.touchwipe.js"></script>
+	<script type="text/javascript" src="/lib/jquery.knob.min.js"></script>
+  <!-- Core Classes -->
+  <script type="text/javascript" src="/classes/Storage.js"></script>
+  <script type='text/javascript' src='/models/AbstractCollection.js'></script>
+  <script type='text/javascript' src='/models/ParseCollection.js'></script>
+  <script type='text/javascript' src='/models/StorageModel.js'></script>
+  <script type='text/javascript' src='/models/DirectStorageModel.js'></script>
+  <script type='text/javascript' src='/models/ChromeStorageCollection.js'></script>
+  <script type='text/javascript' src='/models/SettingsModel.js'></script>
+  <script type='text/javascript' src='/classes/User.js'></script>
+  <script type='text/javascript' src='/classes/Storage.js'></script>
+  <script type='text/javascript' src='/classes/SplitTest.js'></script>
+  <script type='text/javascript' src='/classes/Trainer.js'></script>
+  <script type='text/javascript' src='/classes/Presenter.js'></script>
+  <!-- Classes -->
+  <!-- UI Base -->
+  <script type="text/javascript" src="/ui/BlissView.js"></script>
+  <script type="text/javascript" src="/ui/exercises/BlissExercise.js"></script>
+  <script type="text/javascript" src="/ui/forms/BlissForm.js"></script>
+    <!-- Exercises -->
+    <script type="text/javascript" src="/ui/exercises/CouldBeWorseExercise.js"></script>
+  </head>
+  <body>
+    <script>
+      Parse.initialize(Bliss.appId, Bliss.javascriptId);
+      new User(function() {
+      new CouldBeWorseExercise().deploy();
+    });
+    </script>
+  </body>
+</html>

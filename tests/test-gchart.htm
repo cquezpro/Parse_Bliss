@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="/Bliss.js"></script>
+    <script type="text/javascript" src="/config.js"></script>
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+    <script type="text/javascript" src="/lib/parse.js"></script>
+    <script type="text/javascript" src="/lib/extend.js"></script>
+    <script type="text/javascript" src="/classes/Storage.js"></script>
+    <script type="text/javascript" src="/classes/Track.js"></script>
+    <script type="text/javascript" src="/classes/TrackSlider.js"></script>
+    <script type="text/javascript" src="/classes/TrackRadios.js"></script>
+    <script type="text/javascript" src="/classes/TrackEasyRadios.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="/classes/User.js"></script>
+    <script type="text/javascript" src="/classes/SplitTest.js"></script>
+    <script>
+      Parse.initialize(Bliss.appId, Bliss.javascriptId);
+      $(document).ready(function(){
+
+      User(function(){
+        var obj = Parse.Object.extend("parseTrack");
+        var query = new Parse.Query(obj);
+        query.exists('submitted');
+        var parseData = []; 
+        Bliss.log('current user');
+        Bliss.log(User.current().id);
+  //        query.equalTo("user", User.current().id);
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+          query.find({
+            success: function(results) {
+              Bliss.log('results from Parse');
+              Bliss.log(results);
+              for (var i = 0; i < results.length; i++) { 
+                var submitted = results[i].get('submitted');
+                var day = new Date(results[i].get('submitted')*1000);
+                var datestring = day.toString();
+                parseData.push([day, results[i].get('happiness')]);
+              }
+              parseData.unshift(['Time', 'Happiness']);
+              Bliss.log('success');
+              Bliss.log(parseData);
+              Bliss.log('drawChart');
+              Bliss.log(parseData);
+              var data = google.visualization.arrayToDataTable(parseData);
+
+              var options = {
+                title: 'Happiness over time',
+                curveType: 'function'
+              };
+
+              var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+              chart.draw(data, options);
+              },
+              error: function(error) {
+                alert("Error: " + error.code + " " + error.message);
+              }
+          });
+        }
+        drawChart();
+      });
+
+
+      });
+    </script>
+    <div id="chart_div" style="width: 1600px; height: 800px;"></div>
+  </body>
+</html>

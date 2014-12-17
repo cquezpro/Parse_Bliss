@@ -1,0 +1,48 @@
+<div id="ThreeGoodThingsExercise" class="default">
+  <div class="inner clearfix">
+    <header class="form-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+      <center><h2>bliss</h2></center>
+    </header>
+    <figure class="main-image">
+        <img src="<%= Bliss.getLocalUrl('ui/exercises/images/Mountains.jpg')  %>">
+        <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+        <figcaption>Three Good Things</figcaption>
+    </figure>
+    <div class="content">
+      <div class="inner clearfix">
+        <div class="container clearfix no-headings">
+
+          <% if (typeof createdAt != 'undefined') { %>
+            <h3><%= Bliss.formatDate(createdAt) %></h3>
+          <% } %>
+          <% if (strengthsCondition == 'strengths') { %> 
+          <p>Describe one to three things that went well recently. Be sure to include how they made you feel and <em>why</em> they happened.
+          What personal strengths and skills of yours made these things a reality?
+          </p>
+          <p class='example'>
+           <b>Example:</b> I got an A on my Spanish test. It made me feel extremely happy and proud...I really feel like I'm starting to master the language.  This happened because I'm intelligent and work hard at things when I set my mind to them.
+          </p>
+          <% } else { %> 
+          <p>Describe one to three things that went well recently. Be sure to include how they made you feel.
+          </p>
+          <p class='example'>
+           <b>Example:</b> I got an A on my Spanish test. It made me feel extremely happy and proud...I really feel like I'm starting to master the language.</p>
+          <% } %>
+          
+        </div>
+        <div class="container clearfix">
+        <div id="ThreeGoodThings" class="multi_string">
+          <textarea name="ThreeGoodThings" index="" ></textarea>
+        </div>
+      </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="btn-center">
+      <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+      </div>
+    </footer>
+  </div>
+</div>

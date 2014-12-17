@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Bliss": {
+            "applicationId": "Tb43HB8M8fOmzIhhqltgnnlXKF5liWp5vBJEoTKM", 
+            "masterKey": "ajnkmBrbCe8vDHXKeQk5U4UFGuy0lmOFDfZhJv3e"
+        }, 
+        "_default": {
+            "link": "Bliss"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}

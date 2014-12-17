@@ -1,0 +1,24 @@
+<div id="BlissGetStorageForm" >
+  <h1>Storage Editing Form</h1>
+  <table id="storage">
+    <tr>
+      <th></th>
+      <th>Variable</th>
+      <th>chrome.storage</th>
+    </tr>
+      <% $.each(storage, function(key, val) { %>
+      <tr variable="<%= key %>">
+        <td class="delete">X </td>
+        <td><%= key %></td>
+        <td class="value <% typeof val == 'boolean' ? print('boolean') : '' %>"><%= Bliss.format(val) %></td>
+      </tr>
+      <% }); %>
+  </table>
+  <b>Load Storage from JSON:</b><br>
+  <textarea id="storageText">
+  </textarea>
+  <br>
+  <button id="loadButton">LOAD</button>
+  <br>
+  <br>
+</div>

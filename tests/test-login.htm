@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+    <script type="text/javascript" src="/lib/parse.js"></script>
+    <script type="text/javascript" src="/lib/extend.js"></script>
+    <script type="text/javascript" src="/classes/Storage.js"></script>
+    <script type="text/javascript" src="/classes/Track.js"></script>
+    <script type="text/javascript" src="/classes/TrackSlider.js"></script>
+    <script type="text/javascript" src="/classes/TrackRadios.js"></script>
+    <script type="text/javascript" src="/classes/TrackEasyRadios.js"></script>
+    <script type="text/javascript" src="/Bliss.js"></script>
+    <script type="text/javascript" src="/config.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="/classes/User.js"></script>
+    <script type="text/javascript" src="/classes/SplitTest.js"></script>
+    <script>
+      $(document).ready(function() {
+  //        localStorage.clear();
+        Parse.initialize(Bliss.appId, Bliss.javascriptId);
+        User(function(){
+            $('body').append('<div id="bliss-webpage-login-info" class="bliss-login-info">Webpage login info.<div>');
+            $('#bliss-webpage-login-info').append('<p>username: '+ User.current().get('username')  +'</p>'); 
+            $('#bliss-webpage-login-info').append('<p>Login source: '+ User.loginSource  +'</p>'); 
+            $('#bliss-webpage-login-info').append('<a href="#" id="clear-local">Clear localStorage</a>'); 
+            $('#clear-local').click(function(e){ 
+              e.preventDefault();
+              localStorage.clear(); 
+              $('#clear-local').html('Local storage cleared!');
+            });      
+        });
+
+            $('body').append('<div>Current Environment: '+ Bliss.getEnvironment() +'</div>');
+    });
+    </script>
+    <div id='login'>nice</div>
+    <div id='bliss-chrome-login-info' ></div>
+    <div id='info'>INFO</div>
+  </body>
+</html>

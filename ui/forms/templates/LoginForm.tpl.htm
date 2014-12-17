@@ -1,0 +1,52 @@
+<div id="LoginForm">
+      <header class="login-header">
+        <div class="inner clearfix">
+          <center>
+          <a href="/">
+            <img src="<%= Bliss.getLocalUrl('images/bliss_logo_100.png') %>" alt="Bliss Logo">            
+          </a>
+          </center>
+        </div>
+      </header>
+  <div class="content clearfix">
+      <center>
+       <h2>Login</h2>
+        <img src="<%= Bliss.getLocalUrl('ui/forms/images/lock-icon.png') %>" alt="Bliss Logo">
+      </center>
+      <div class="login-form">
+        <div class="field-container">
+          <input type="text" id="BlissEmail" placeholder="Email" name="BlissEmail" value="<%= BlissEmail %>"/>
+          <span>
+            <img src="<%= Bliss.getLocalUrl('ui/forms/images/email.png') %>" alt="">
+          </span>
+        <!--<div id="email-input">--> <!--</div>-->
+        </div>  
+        <!--<div id="password-input">-->
+        <!--</div>-->
+        <div class="field-container">
+          <input type="password" placeholder="Password" id="BlissPassword" name="BlissPassword" value="">
+          <span>
+              <img src="<%= Bliss.getLocalUrl('ui/forms/images/key-password.png') %>" alt="">
+          </span>
+        </div>
+      <div class="btn-center">
+      <button id="submitButton" class="btn btn-block">Login</button>
+      </div>
+      
+      <div class="existing-account">
+        <center>
+          <br />
+        <a href="#" class="launcher create-account" view="CreateAccountForm">Create new account</a>
+        </center>
+      </div>
+      
+      <center>
+          <br />
+          <a href="#" class="launcher login" view="LoginForm">Try Bliss without creating an account</a>
+      </center>
+      
+
+      </div>
+        
+  </div>
+</div>

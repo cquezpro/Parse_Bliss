@@ -1,0 +1,30 @@
+Trainers
+
+(array) Exercises ['gratitude', 'motivation', 'ANTs', 'honoring_people']
+
+After 10 Tracks, enable first gratitude test
+
+Prompt to do new exercise on 1st, 5th, 12th track
+
+Provide list of exercises in popup window
+  Show 'New' exercises in menu
+  Update Icon with FB Style notification '1', '2' - # of scheduled exercises
+
+Schedule exercises:
+  Re-use / Generalize Initiator class if makes sense
+
+Exercises settings:
+  Display in popup: Always, When scheduled, Never
+  Remind on Track: (array) [1, 5, 12]  (Times to prompt after tracking)
+  Schedule logic:  How often to schedule
+  
+
+
+
+TODO
+  Close exercise button, top right of window
+
+  
+
+
+

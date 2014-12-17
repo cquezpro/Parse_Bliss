@@ -1,0 +1,54 @@
+<div id="SevenDayChallenge">
+  <header id="header" class="header">
+    <div class="inner clearfix">
+          <center>
+          <a href="/">
+            <img src="/images/useraccess-logo.png" alt="Bliss Logo"> 
+          </a>
+          </center>
+        </div>
+  </header>
+  <div class="content">
+    <div class="container clearfix">
+    <div class="challenge-header">
+      <center>
+      <h1>Take the 7 day challenge</h1>
+      <h2>Transform your life with a week of positive psychology</h2>
+      </center>
+    </div>
+    
+    <div class="challenge-progress clearfix">
+      <div class="progress-ball col-1">
+        <!--Put the actual progress in the value-->
+        <input type="text" name="challengeProgress" id="challengeProgress" data-targetValue="0" class="cprogress" value="<%= Bliss.round((use_day_count / 7) * 100, 0) %>" style="display: none;"/>
+      </div>
+      <div class="progress-details col-2">
+        <div class="inner">
+          <h3><%= use_day_count %> out of 7 <br />days complete</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="challenge-details col-1">
+      <div class="inner clearfix">
+      <ul>
+        <li>Rewire your brain for happiness and success</li>
+        <li>Get rid of stress, anxiety and depression</li>
+        <li>Become more productive and effective</li>
+        <li>Get more enjoyment out of life</li>
+      </ul>
+      </div>
+    </div>
+
+    <div class="take-the-challenge col-2">
+      <div class="inner clearfix">
+      <p><strong>It's free and takes only 5 - 10 minutes a day</strong></p>
+      <div class="btn-center">
+        <button id="acceptChallenge" class="btn btn-block">Take the 7 day challenge</button>
+      </div>
+      <a href="#" class="BlissAnonymousLink" id="BlissAnonymous">Use Bliss without taking the challenge</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

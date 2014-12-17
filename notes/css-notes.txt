@@ -1,0 +1,155 @@
+/ui/style.css
+
+Styles that apply to both exercises and forms
+
+This will be our main global style sheet
+
+
+/ui/exercises/exercises.css
+
+Styles related to exercises
+
+
+/ui/forms/forms.css
+
+Styles related to forms
+
+
+NOTE: form.css and exercises.css will both be included for all forms and exercises.  So we should target selectors so that forms styles do not break
+exercises and vice versa.
+
+
+/content_script.css
+
+Styles for 'content scripts' (html inserted into the page by the chrome extension)
+
+This is used for the moodtrackers and UI Messages i.e. "Your mood tracker entry have been submitted"
+
+/tracker.css
+
+Styles related to the mood trackers
+
+/popup.css
+
+Styles related to the popup window that appears when you click the bliss icon
+
+/reset.css
+
+Move to root dir - so it can be used for general purpose resets by any asset
+
+The theme for Bliss app are styled based from the previous and current submitted designs and have been implemented using HTML5/CSS3.
+
+We have two layouts for the Bliss app(default and inverse) that should be added in the parent tag. We are using the classes in the following directories: 
+
+- ui/exercises/ (default for the exercises and inverse for the review exercises)
+- ui/forms(inverse for the getting started and settings; default for the loginForm)
+
+Using the inverse layout
+
+<div id="uniqueID" class="inverse">
+	<div id="GettingStartedForm" class="inverse view">
+
+	<header class="inverse-header">
+	<div class="inner clearfix">
+	  <center>
+	  <a href="/">
+	    <img src="/ui/forms/images/logo.png" alt="Bliss Logo"> 
+	  </a>
+	  </center>
+	</div>
+	</header>
+
+	<div class="content">
+	<div class="inner clearfix">
+	</div>
+	</div>
+</div>
+
+Using the default layout for the exercises form with images
+
+<div id="BestFutureExercise" class="default view">
+  <header class="form-header">
+    <center><h2>bliss</h2></center>
+  </header>
+  <figure class="main-image">
+    <img src="<%= Bliss.getLocalUrl('ui/exercises/images/{name of the background image}')  %>">
+    <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+    <figcaption class="title">{Exercise title}</figcaption>
+  </figure>
+    <div class="content">
+      <div class="inner clearfix">
+      <div class="container clearfix no-headings">
+      
+      </div>
+    </div>
+</div>
+
+Using the default layout for the exercises form without images
+
+<div id="BestFutureExercise" class="default view">
+  <header class="form-header">
+    <center><h2>bliss</h2></center>
+  </header>
+    <div class="content">
+      <div class="inner clearfix">
+      <div class="container clearfix">
+      
+      </div>
+    </div>
+</div>
+
+If you want to put a title in the intro of the exercise put an h2 tag with the title name inside the container div.
+
+<div class="container clearfix">
+	<h2>Title</h2>
+	<p>the texts</p>
+</div>
+
+For this implementation we have separated classes for the css and scripts. To use classes for javascript we have added the following classes:
+
+- view
+	- exercise
+	or
+	- form
+
+We can use this classes to handle javascript events.
+
+
+For the texts.
+
+Heading inside the content div should be h3 and a paragraph should have a p tag instead of using div.
+
+<div id="BestFutureExercise" class="default view">
+  <header class="form-header">
+    <center><h2>bliss</h2></center>
+  </header>
+    <div class="content">
+      <div class="inner clearfix">
+      <div class="container clearfix">
+      
+      <h3>This is the heading</h3>
+
+      <p>This is a paragraph</p>
+      </div>
+    </div>
+</div>
+
+Form inputs should have its label. 
+
+For checkboxes and radio buttons
+<input type="checkbox" id="checkboxID"/><label for="checkboxID">this is a label</label>
+
+
+label for selectbox and inputs are inline in the inverted class. Should be used be used like the example below and inside the content div
+
+    <div class="field-container">
+      <label for="employment">What is your employment status? :</label>
+      <select name="employment" id="employment">
+        <option value="" <% employment == '' ? print('selected="selected"') :'' %>>- Please Select -</option>
+        <option value="employed"  <% employment == 'employed' ? print('selected="selected"') :'' %>>Currently Employed</option>
+        <option value="unemployed" <% employment == 'unemployed' ? print('selected="selected"') :'' %>>Unemployed</option>
+        <option value="looking" <% employment == 'looking' ? print('selected="selected"') :'' %>>Looking for work</option>
+      </select>
+    </div>
+
+

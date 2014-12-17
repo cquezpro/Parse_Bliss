@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+    <script type="text/javascript" src="/lib/parse.js"></script>
+    <script type="text/javascript" src="/lib/extend.js"></script>
+    <script type="text/javascript" src="/lib/moment.min.js"></script>
+    <script type="text/javascript" src="/classes/Storage.js"></script>
+    <script type="text/javascript" src="/classes/Track.js"></script>
+    <script type="text/javascript" src="/classes/TrackSlider.js"></script>
+    <script type="text/javascript" src="/classes/TrackRadios.js"></script>
+    <script type="text/javascript" src="/classes/TrackEasyRadios.js"></script>
+    <script type="text/javascript" src="/Bliss.js"></script>
+    <script type="text/javascript" src="/config.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="/classes/User.js"></script>
+    <script type="text/javascript" src="/classes/SplitTest.js"></script>
+    <script>
+      Parse.initialize(Bliss.appId, Bliss.javascriptId);
+      User(function(){
+        var obj = Parse.Object.extend("MoodTracker");
+        var query = new Parse.Query(obj);
+        var parseData = []; 
+  //        query.equalTo("user", User.current().id);
+        function drawChart() {
+          query.find({
+            success: function(results) {
+              console.log('success'); 
+              console.log(results);
+              parseData = [];
+              var min = results[0].get('submitted');
+              var max = results[0].get('submitted');
+              for (var i = 0; i < 7; i++) { 
+                var submitted = Date(moment().day(i).seconds());
+                var val = Bliss.getRandomInt(3, 10); 
+
+                parseData.push([submitted, val]);
+              }
+              var last = moment().day(6).subtract('seconds', 1000).toDate(); 
+              parseData.unshift(['Time', 'Happiness']);
+              console.log(parseData);
+
+              var data = google.visualization.arrayToDataTable(parseData);
+              var start = moment().day(0);
+              var end   = moment().day(6);
+              console.log('end');
+              console.log(end);
+
+              var options = {
+                title: 'Mood Tracker ('+ start.format('MMMM Do') +' - '+ end.format('MMMM Do, YYYY') +')',
+                hAxis: {title: '', 
+                        minValue: start.toDate(), 
+                        maxValue: end.toDate(),
+                        format: 'EEEE',
+                        },
+                vAxis: {title: '', minValue: 0, maxValue: 10},
+               
+                legend: 'none'
+              }; 
+
+                var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+                Bliss.log('chart');
+                Bliss.log(chart);
+                chart.draw(data, options);
+            },
+            error: function(error) {
+              alert("Error: " + error.code + " " + error.message);
+            }
+          });
+        }
+        //Load Google Charts
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+
+
+      });
+    </script>
+    <div id="chart_div" style="width: 960px; height: 500px;"></div>
+  </body>
+</html>

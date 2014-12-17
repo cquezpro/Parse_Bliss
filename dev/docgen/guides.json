@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Bliss Guides",
+    "items": [
+        {
+          "name": "BlissProjectOverview",
+          "url": "guides/Overview",
+          "title": "Overview",
+          "description": "Project overview"
+        },
+        {
+          "name": "BlissView",
+          "url": "guides/BlissView",
+          "title": "BlissView",
+          "description": "Creating forms and exercises with BlissView"
+        },
+        {
+          "name": "SplitTest",
+          "url": "guides/SplitTest",
+          "title": "SplitTest",
+          "description": "Creating SplitTests"
+        }
+    ]
+  }
+]

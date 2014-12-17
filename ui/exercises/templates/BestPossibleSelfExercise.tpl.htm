@@ -1,0 +1,41 @@
+<div id="BestPossibleSelfExercise" class="default">
+    <header class="form-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+      <center><h2>bliss</h2></center>
+    </header>
+    
+    <figure class="main-image">
+        <img src="<%= Bliss.getLocalUrl('ui/exercises/images/BestFutureBackground.jpg')  %>">
+        <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+        <figcaption class="title">Best Possible Self</figcaption>
+    </figure>
+    
+    <div class="content">
+      <div class="inner clearfix">
+        <div class="container clearfix">
+          <% if (typeof createdAt != 'undefined') { %>
+            <h3><%= Bliss.formatDate(createdAt) %></h3>
+          <% } %>
+          <br>
+          <p><span class="first">Imagine</span> your ideal life a year or more in the future. You've re-wired your brain for happiness and motivation by using Bliss and have made many other positive changes.</p>
+          <br>
+          <p><span class="first">Describe</span> your ideal self and the ideal life you've achieved with a new, better brain. Let yourself dream big. What have you accomplished? How do you feel about yourself? How do others see you differently? What skills have you mastered? What new pleasures and opportunities do you enjoy?</p>
+          <br>
+        <p><span class="first">Use</span> vivid imagery and let yourself enjoy the process. Take as much time as you like. You are building the foundation on which to build your best possible life.</p>
+        </div>
+        <div class="container clearfix">
+          <textarea id="personal" ><%= personal %></textarea>
+          <p class='help'>Example: One year from today, I've done my Bliss exercises consistently and no longer feel stressed out and sad. Every day feels like an adventure, because I am putting myself 100% into living my best possible life. I've unleashed a sense of hope and optimism, which has allowed me to recognize new opportunities and grow my business over 300%. I've joined several meet up groups and developed a fantastic group of friends. I've learned to really appreciate other people, without being critical, and as a result they seem to like me more. I've finally mastered Spanish, have started exercising and have lost 15 lbs of body fat. 
+        </div>
+      </div>
+    </div>
+
+
+<footer id="footer">
+    <div class="btn-center">
+    <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+    </div>
+</footer>
+
+</div>

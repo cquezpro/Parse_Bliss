@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='AbstractCollection'>/**
+</span> *  @class AbstractCollection
+ *  @abstract
+ *
+ *  Abstract class for collections
+ *
+ *  Collections are a list of related models, which we can navigate through. For instance, we can load a collection for all of a user's Gratitude Journal entries. This
+ *  allows us to load all journal entries in collection, and provide them to {@link BlissView} allowing the user to navigate through all entries.
+ *
+ *  Sub-classes can extend AbstractCollection in order to allow for different storage mechanisms
+ *
+ */
+
+<span id='AbstractCollection'> /**
+</span>  *  @param name  the name of the class which will be loaded. Should be unique to the collection as it is used for storage / retrieval
+  *  @param options
+  *  @param options.dataLoad  Options pertaining to loading models for the collection
+  *  @param options.dataLoad.startDate  {Number} Unix timestamp only load models after this time
+  *  @param options.dataLoad.endDate    {Number} Unix timestamp only load models before this time
+  */
+function AbstractCollection(name, options) {
+  var defaults = {dataLoad: {startDate: null}};
+  this.options = $.extend(defaults, options);
+  this.loaded  = false;
+  this.models  = [];
+  this.pointer = 0;
+  if (!name) {
+    throw new Error(&quot;You must provide a name in your instantiation of AbstractCollection&quot;);
+  }
+  this.name = name;
+}
+
+AbstractCollection.prototype = {
+<span id='AbstractCollection-method-ensureLoaded'>  /**
+</span>   * Throw an error if the collection is not yet loaded
+   */
+  ensureLoaded: function() {
+    if (!this.loaded) {
+      alert('Model is not loaded ('+ this.name + ')');
+      throw new Error('Model is not loaded ('+ this.name + ')');
+    }
+  },
+<span id='AbstractCollection-method-load'>  /**
+</span>   * @abstract
+   * Abstract method to load collection which should be implemented by the sub-class
+   * @param {Function} callback  Callback function which will be executed when the collection is loaded
+   */
+  load: function(callback) {
+    alert('AbstractiCollection.load must be implemented by your sub-class');
+  },
+<span id='AbstractCollection-method-getModel'>  /**
+</span>   * Get the current model indexed in the collection based on our internal pointer
+   * @return {Object} model
+   */
+  getModel: function() {
+    return this.models[this.pointer];
+  },
+<span id='AbstractCollection-method-getModelAttrs'>  /**
+</span>   * Get the attributes of currently index model - field names / values
+   * @return {Object} attributes
+   */
+  getModelAttrs: function() {
+    var attrs = [];
+    $.each(this.models, function(key, model) {
+      attrs.push(model.attributes);
+    });
+    return attrs;
+  },
+
+<span id='AbstractCollection-method-getCollection'>  /**
+</span>   * Return all models in the collection
+   * @return {Object[]} models
+   */
+  getCollection: function() {
+    return this.models;
+  },
+<span id='AbstractCollection-method-length'>  /**
+</span>   * Return number of models in the collection
+   * @return {Number} length
+   */
+  length: function() {
+    return this.models.length
+  },
+<span id='AbstractCollection-method-savedCount'>  /**
+</span>   * Return number of models in the collection that have been saved before (are not newly created)
+   * @return {Number} length
+   */
+  savedCount: function() {
+    var count = 0;
+    $.each(this.models, function(key, model) {
+      if (!model.isNew()) {
+        count++;
+      }
+    });
+    return count;
+  },
+<span id='AbstractCollection-method-goToId'>  /** 
+</span>   * Set collection index to point to the model with id of 'id'
+   * @param {String} id  the id of the model to set the index to
+   * @return {Number/Boolean} Index of model. False if model id is not in index
+   */
+  goToId: function(id) {
+    var index = this.getIndexById(id);
+    if (index !== false) {
+      return this.index(index);
+    }
+    return false;
+  },
+<span id='AbstractCollection-method-getIndexById'>  /** 
+</span>   * Get index of the model in collection by id 
+   * @param {String} id  the id of the model to find the index for
+   * @return {Number/Boolean} Index of model. False if model id is not in index
+   */
+  getIndexById: function(id) {
+    var that = this;
+    var match = false;
+    $.each(this.models, function(key, model) {
+      if (model.attributes.bliss_id == id || model.id == id) {
+        match = key;
+      }
+    });
+    return match;
+  },
+<span id='AbstractCollection-method-next'>  /** 
+</span>   * Advances the pointer to the next model and returns it
+   * @return {Object/Boolean} model returns false if no model exists
+   *
+   */ 
+  next: function(e) {
+    if (this.models[this.pointer + 1]) {
+      this.pointer++;
+      return this.getModel();
+    }
+    else {
+      return false;
+    }
+  },
+  
+<span id='AbstractCollection-method-prev'>  /** 
+</span>   * Advances the pointer to the previous model and returns it
+   * @return {Object/Boolean} model returns false if no model exists
+   */ 
+  prev: function(e) {
+    if (this.models[this.pointer - 1]) {
+      this.pointer--;
+      return this.getModel();
+    }
+    else {
+      return false;
+    }
+  },
+<span id='AbstractCollection-method-last'>  /** 
+</span>   * Advances the pointer to the first model and returns it
+   * @return {Object} model
+   */ 
+  last: function() {
+    this.index(this.length() - 1)
+    return this.getModel();
+  },
+<span id='AbstractCollection-method-first'>  /** 
+</span>   * Advances the pointer to the last model and returns it
+   * @return {Object} model
+   */ 
+  first: function() {
+    this.index(0);
+    return this.getModel();
+  },
+<span id='AbstractCollection-method-index'>  /** 
+</span>   * Advances the pointer to the model at index and returns it, or false if doesn't exist
+   * @return {Object/Boolean} model
+   */ 
+  index: function(index) {
+    if (this.models[index]) {
+      this.pointer = index;
+      return this.getModel();
+    }
+    else {
+      return false;
+    }
+  },
+<span id='AbstractCollection-method-deleteModel'>  /** 
+</span>   * Deletes model at current index
+   */ 
+  deleteModel: function() {
+    this.getModel().destroy();
+    //Remove model from index
+    this.models.splice(this.pointer, 1);
+    //Make sure index is still in bounds
+    if (!this.models[this.pointer] &amp;&amp; this.length() &gt; 0) {
+      this.last();
+    }
+  }
+}
+
+
+</pre>
+</body>
+</html>

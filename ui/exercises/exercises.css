@@ -1,0 +1,112 @@
+/**
+ *  Usable in any items inside the content div from forms to intro, feedback and settings page
+ *  Use this when we want to add a content inside the layout usable inside the content div make sure to use the
+ *  a proper HTML tags to get the best results
+ *  <div class="container clearfix">
+ *  content goes here
+ *  </div>
+ *  <div class="container clearfix">
+ *  form goes here
+ *  </div>
+ *  text and forms needs to be separated
+ *  If there's no title
+ *  <div class="container clearfix no-headings">
+ *  content goes here
+ *  </div>
+ *  if you want to use a multi-header like the best future exercise use
+ *  <div class="section-header">
+ *  <h3>Title here</h3>
+ *  </div>
+ *  You may also add clearfix if desired
+ *  Reason why I remove the padding of the content is to make the layout more flexible
+ *  
+ */
+
+.default .container{
+
+  font-size: 14px;
+  font-family: Arial, Helvetica, Sans-serif;
+  padding: 0 2em;
+  margin-bottom: 1em;
+
+}
+
+.default .container.no-headings{
+  margin-top: 2.5em;
+}
+
+.default .section-header {
+  background: #39bb9d;
+  padding: 15px 0;
+  margin: 2em 0;
+}
+
+.default .section-header h2{
+  opacity: 1;
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.inverse .container{
+  font-size: 14px;
+  padding: 0 2em;
+  margin-bottom: 1em;
+}
+
+.inverse .section-header {
+  background: #39bb9d;
+  padding: 15px 0;
+  margin: 2em 0;
+}
+
+.inverse .section-header h2{
+  opacity: 1;
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+/**
+ *
+ *  Exercise Image styling
+ *
+ **/
+
+.default figure{
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.default figure img:not(.icon){
+  width: 100%;
+}
+
+
+.default figure img.icon {
+  position: absolute;
+  left: 46%;
+  right: 46%;
+  top: 95px;
+}
+
+.default figcaption{
+  position: absolute;
+  z-index: 10;
+  font-size: 28px;
+  top: .8em;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.inverse .container{
+  padding: 0 1em;
+  margin-bottom: 1em; 
+}
+/**
+ *
+ * End of exercise image styling
+ *
+ **/

@@ -1,0 +1,55 @@
+<div class="content clearfix today-and-challenge-popup">
+
+<% if (use_day_streak > 1) { %>
+  <div class='day-streak'>
+    You've used Bliss for <%= use_day_streak %> days in a row
+  </div>
+
+  
+<% } else{ %>
+  <div class="messages">
+  </div>
+<% } %>
+
+<div class="progress-container">
+  <div class="inner clearfix">
+    <h3>Today's Exercise</h3>
+  </div>
+</div>
+<div class="exercise" href="<%= exercise.name %>">
+<div class="exercise-container clearfix">
+  
+    <div class="name"><%= exercise.display_name %></div>
+
+  
+    <div class="pencil-icon-wrap">
+      <div class="pencil-circle">
+      <span class="icon-pencil"></span>
+      </div>
+    </div>
+    <div class="date-desc-group">
+    <div class="exercise-date"><%= moment.unix(Bliss.getTime()).format("MMMM D, YYYY") %></div>
+      <% if (exercise.completed) { %>
+        <div class="status">
+        <span class="icon-checkmark"></span>
+        <span> Complete</span>
+        </div>
+      <% } %>
+    <div class="exercise-description"><%= exercise.description %></div>
+
+    </div>
+ </div>  
+</div>
+</div>
+<footer class="footer clearfix">
+    <div class="popup-actions inverted" href="/ui/review/Review.htm"><span class="icon-notebook"></span>Review Exercises</div>
+    <div class="popup-actions inverted" href="/ui/deploy/deploy.htm?exercise=FeedbackForm"><span class="icon-feedback"></span>Feedback</div>
+    <div class="popup-actions inverted" href="/ui/deploy/deploy.htm?exercise=SettingsForm"><span class="icon-cog5"></span>Settings</div>
+    <%  if (Bliss.dev) { %>
+      <div class="dev" href="dev/getStorage.htm?deploy=1"><span class="icon-storage"></span><span class="mls">Edit Storage<div class="devtool">dev tool</div></span></div>
+      <div class="dev" href="dev/setDate.htm"><span class="icon-storage"></span><span class="mls">Edit Date<div class="devtool">dev tool</div></span></div>
+      <div class="dev" href="docs/index.html"><span class="icon-storage"></span><span class="mls">Documentation<div class="devtool">dev tool</div></span></div>
+      <div class="dev" href="tests/test.htm"><span class="icon-storage"></span><span class="mls">Tests<div class="devtool">dev tool</div></span></div>
+    <% } %>
+</footer>
+

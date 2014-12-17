@@ -1,0 +1,35 @@
+<div id="MotivationExercise" class="default">
+  <div class="inner clearfix">
+    <header class="form-header">
+      <center><h2>bliss</h2></center>
+    </header>
+    <div class="content">
+
+      <div id="intro" class="intro">
+        
+        <div class="exercise-text">
+          <h1 class="title">Why do <i>you</i> want to use Bliss?</h1>
+          <p>
+          Whenever starting a new habit, it's important to clarify your motivation to help you stick with it and get the best 
+          results from your effort. Why are you using Bliss? What do you hope to accomplish or change? How do want to improve?
+          </p>
+        </div>
+        
+        <div class="exercise-form">
+        <div class="textarea-container">
+          <b>I'm using Bliss because I want to:</b>
+          <textarea id="other"><%= other %></textarea>
+          <% new SplitTest('motivation-addl-reasons').yesno(function(){ %>
+          <div>Writing out your own reasons helps clarify your intention and get the most out of Bliss</div>
+          <% }); %>
+        </div>
+      </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="btn-center">
+      <button id="submitButton" class="btn btn-default">Next</button>
+      </div>
+    </footer>
+  </div>
+</div>

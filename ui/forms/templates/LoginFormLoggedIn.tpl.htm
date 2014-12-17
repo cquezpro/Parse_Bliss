@@ -1,0 +1,21 @@
+<div id="LoginForm">
+      <header class="login-header">
+        <div class="inner clearfix">
+          <center>
+          <a href="/">
+            <img src="/images/bliss_logo_100.png" alt="Bliss Logo"> 
+          </a>
+          </center>
+        </div>
+      </header>
+  <div class="content clearfix">
+      <center>
+       <h2>Account</h2>
+       <img src="/ui/forms/images/lock-icon.png" alt="Bliss Logo"> 
+      </center>
+      <div class="login-form">
+        <h3>You are logged in as <%= User.current().get('username') %></h3>
+        <div><a href="#" class="logout">Logout</a></div>
+      </div>
+  </div>
+</div>

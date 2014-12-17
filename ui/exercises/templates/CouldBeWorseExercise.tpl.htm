@@ -1,0 +1,42 @@
+<div id="CouldBeWorseExercise" class="default">
+  <div class="inner clearfix">
+    <header class="form-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+      <center><h2>bliss</h2></center>
+    </header>
+
+    <figure class="main-image">
+        <img src="<%= Bliss.getLocalUrl('ui/exercises/images/Lift.jpg')  %>">
+        <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+        <figcaption class="title">Could Be Worse</figcaption>
+    </figure> 
+
+    <div class="content">      
+      <div class="inner clearfix">
+        <div class="container clearfix no-headings">
+        <% if (typeof createdAt != 'undefined') { %>
+          <h3><%= Bliss.formatDate(createdAt) %></h3>
+        <% } %>
+        <p>
+        <span class="first">Start</span> by identifying a few times in your life when you were lucky, or helped by others. What could have gone wrong? What misfortunes could have happened that didn't? What opportunities could not have materialized? 
+        </p>
+        <br>
+        <p><span class="first">Then</span> write a short description of what your life would be like if you hadn't been so fortunate. What pleasures and sources of joy would you not have?  What hardships would you have to deal with?</p>
+      
+        <br>
+        <textarea name="CouldBeWorseExercise" index="" ><%= CouldBeWorseExercise %></textarea>
+ 
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <footer id="footer">
+      <div class="btn-center">
+        <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+      </div>
+    </footer>
+  </div>
+</div>

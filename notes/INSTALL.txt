@@ -1,0 +1,42 @@
+You can use Bliss as a local web app.
+
+1) Set up a local webserver pointing to bliss web root (i.e. /var/www/bliss) and 
+a virtual host so that 
+
+bliss.local/
+
+Is pointing to /var/www/bliss/index.php
+
+
+EXAMPLE VIRTUAL HOST CONFIG:
+
+<VirtualHost *:80>
+        ServerAdmin admin@opentactics.com
+        ServerName bliss.local 
+        DirectoryIndex index.php
+        DocumentRoot /var/www/bliss
+
+    <Directory />
+        AllowOverride All
+    </Directory>
+</VirtualHost>
+
+
+2) Add bliss.local to point to 127.0.0.1 in your hosts config file
+
+
+3) Go to bliss.local/ui/forms/LoginForm.htm
+
+user: test@opentactics.com
+pass: test
+
+(Login form will simply reload, you are now logged in)
+
+4) View all forms / exercises at:
+
+http://bliss.local/
+
+
+That is the easiest way to work with most things.  You can also install as an unpacked Chrome extension. See:
+http://superuser.com/questions/247651/how-does-one-install-an-extension-for-chrome-browser-from-the-local-file-system
+

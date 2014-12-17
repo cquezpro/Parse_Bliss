@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Review your exercises</title>
+      <!-- Stylesheets -->
+  <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/reset.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/lib/css/icomoon.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/exercises/exercises.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/ui/form.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/lib/weekpicker/week-picker-view.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="review.css" type="text/css" media="all">
+  <!-- Core Lib -->
+  <script type="text/javascript" src="/lib/jquery.js"></script>
+  <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+  <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+  <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+  <script src="/lib/parse.js"></script>
+  <script src="/lib/moment.min.js"></script>
+  <script type="text/javascript" src="/lib/google-charts.js"></script>
+  <script type="text/javascript" src="/lib/underscore.js"></script>
+  <script type="text/javascript" src="/lib/Interface.js"></script>
+  <script type="text/javascript" src="/lib/extend.js"></script>
+  <!-- Date selectors -->
+  <script type="text/javascript" src="/lib/monthpicker/jquery.mtz.monthpicker.js"></script>
+  <script type="text/javascript" src="/lib/weekpicker/week-picker.js"></script>
+  <!-- Config -->
+  <script type="text/javascript" src="/Bliss.js"></script>
+  <script type="text/javascript" src="/config.js"></script>
+  <!-- Plugins -->
+  <script type="text/javascript" src="/lib/jquery.autosize.js"></script>
+  <!-- Core Classes -->
+  <script type="text/javascript" src="/classes/Storage.js"></script>
+  <script type='text/javascript' src='/models/AbstractCollection.js'></script>
+  <script type='text/javascript' src='/models/ParseCollection.js'></script>
+  <script type='text/javascript' src='/models/StorageModel.js'></script>
+  <script type='text/javascript' src='/models/ChromeStorageCollection.js'></script>
+  <script type='text/javascript' src='/classes/User.js'></script>
+  <script type='text/javascript' src='/classes/Storage.js'></script>
+  <script type='text/javascript' src='/classes/SplitTest.js'></script>
+  <script type='text/javascript' src='/classes/Trainer.js'></script>
+  <script type='text/javascript' src='/classes/Presenter.js'></script>
+  <!-- UI Base -->
+  <script type="text/javascript" src="/ui/BlissView.js"></script>
+  <script type="text/javascript" src="/ui/exercises/BlissExercise.js"></script>
+  <script type="text/javascript" src="/ui/forms/BlissForm.js"></script>
+  </head>
+  <body>
+  <script type="text/javascript" src="/ui/moodtracker/review.js"></script>
+
+<div id="TrackerReviewPage" class="inverse" style="max-width: 900px;">
+      <header class="inverse-header">
+        <div class="inner clearfix">
+          <center>
+          <a href="/">
+            <img src="/ui/forms/images/logo.png" alt="Bliss Logo"> 
+          </a>
+          </center>
+        </div>
+      </header>
+  <div class="content">
+      <center>
+        <h1 class="global">Mood Trackers</h1>
+      </center>
+      <div class="form-container">
+        <div id='date-selector'></div>
+        <div id='chart-type-selector'>
+          <strong>View by:</strong>
+          <select>
+            <option value='week'>Week</option>
+            <option value='month'>Month</option>
+          </select>
+        </div>
+        <div id="chart-container" style='height: 300px;'></div>
+      </div>
+  </div> <!-- end content -->
+  <footer id="footer">
+      <div class="inner clearfix">
+      </div>
+  </footer>
+
+</div>
+  </body>
+</html>

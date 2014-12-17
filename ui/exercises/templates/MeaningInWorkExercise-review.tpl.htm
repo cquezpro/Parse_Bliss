@@ -1,0 +1,45 @@
+<div id="gratitude-form" class="inverse">
+  <header class="inverse-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>
+        <center>
+        <a href="/">
+          <img src="<%= Bliss.getLocalUrl('ui/forms/images/logo.png') %>" alt="Bliss Logo"> 
+        </a>
+        </center>
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+  </header>
+  <div class="review content">
+    <div class="inner clearfix">
+      <div class="container clearfix">
+        <section class="title-container">
+          <h2 class="title">Meaning In Work</h2>
+          <% if (typeof createdAt != 'undefined') { %>
+            <p class="exercise-date"><%= moment(createdAt).format('MMMM Do YYYY') %></p>
+          <% } %>
+        </section>
+
+        <center>
+          <div class="actions">
+            <a href="" class="view_action_add" title="Add exercise">
+              <img src="<%= Bliss.getLocalUrl('ui/review/icons/add-icon.png') %>" alt="add exercise">
+            </a>
+            <a href="" class="view_action_edit edit" title="Edit exercise">
+              <img src="<%= Bliss.getLocalUrl('ui/review/icons/edit-icon.png') %>" alt="edit exercise">
+            </a>
+            <a href="#" class="view_action_delete" title="Delete exercise">
+              <img src="<%= Bliss.getLocalUrl('ui/review/icons/delete-icon.png') %>" alt="delete exercise">
+            </a>
+          </div>
+        </center>
+        <h3>How does your work help other people?</h3> 
+        <div id="help_others" >"<%= help_others %>"</div>
+      </div>
+      <div class="container clearfix">
+        <h3>What</span> unique skills and strengths can you use in your work?</h3> 
+        <div id="strengths" >"<%= strengths %>"</div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer"></footer>
+  </div>
+</div>

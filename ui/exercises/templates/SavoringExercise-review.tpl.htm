@@ -1,0 +1,47 @@
+<div id="SavoringExercise" class="inverse">
+    <header class="inverse-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>
+        <center>
+        <a href="/">          
+          <img src="<%= Bliss.getLocalUrl('ui/forms/images/logo.png') %>" alt="Bliss Logo">
+        </a>
+        </center>
+      <a href="#" id="next" title="Next entry">
+        <img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>">
+      </a>
+    </header>
+
+    <div class="review content">
+      <div class="inner clearfix">
+        <div class="container clearfix">
+          <section class="title-container">
+            <h2 class="title">Savoring</h2>
+            <% if (typeof createdAt != 'undefined') { %>
+              <p class="exercise-date"><%= moment(createdAt).format('MMMM D, YYYY') %></p>
+            <% } %>
+          </section>
+
+        <center>
+          <div class="actions">
+            <a href="" class="view_action_add" title="Add exercise">
+              <img src="<%= Bliss.getLocalUrl('ui/review/icons/add-icon.png') %>" alt="add exercise">
+            </a>
+            <a href="" class="view_action_edit edit" title="Edit exercise">
+              <img src="<%= Bliss.getLocalUrl('ui/review/icons/edit-icon.png') %>" alt="edit exercise">
+            </a>
+            <a href="#" class="view_action_delete" title="Delete exercise">
+              <img src="<%= Bliss.getLocalUrl('ui/review/icons/delete-icon.png') %>" alt="delete exercise">
+            </a>
+          </div>
+        </center>
+        <h3>Set aside 10 minutes for an activity you enjoy.</h3>
+
+        </div>
+        <div class="container clearfix">
+          <p name="SavoringExercise" index="" >"<%= SavoringExercise %>"</p>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+    </footer>
+</div>

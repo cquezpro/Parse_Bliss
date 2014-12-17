@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+    <script type="text/javascript" src="/lib/parse.js"></script>
+    <script type="text/javascript" src="/lib/extend.js"></script>
+    <script type="text/javascript" src="/lib/moment.min.js"></script>
+    <script type="text/javascript" src="/classes/Storage.js"></script>
+    <script type="text/javascript" src="/classes/Track.js"></script>
+    <script type="text/javascript" src="/classes/TrackSlider.js"></script>
+    <script type="text/javascript" src="/classes/TrackRadios.js"></script>
+    <script type="text/javascript" src="/classes/TrackEasyRadios.js"></script>
+    <script type="text/javascript" src="/Bliss.js"></script>
+    <script type="text/javascript" src="/config.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="/classes/User.js"></script>
+    <script type="text/javascript" src="/classes/SplitTest.js"></script>
+    <script>
+      Parse.initialize(Bliss.appId, Bliss.javascriptId);
+      User(function(){
+        var obj = Parse.Object.extend("MoodTracker");
+        var query = new Parse.Query(obj);
+        var parseData = []; 
+        Bliss.log('current user');
+        Bliss.log(User.current().id);
+  //        query.equalTo("user", User.current().id);
+        function drawChart() {
+          query.find({
+            success: function(results) {
+              console.log('success'); 
+              console.log(results);
+              parseData = [];
+              for (var i = 0; i < results.length; i++) { 
+                var createdDate = results[i].get('createdDate');
+                if (createdDate) {
+                  datetime = createdDate.getTime();
+                  if (typeof min == 'undefined') {
+                    max = datetime;
+                    min = datetime;
+                  }
+                  max = (datetime > max) ? datetime : max;
+                  min = (datetime < min) ? datetime : min;
+
+                  parseData.push([createdDate, results[i].get('happiness')]);
+                }
+              }
+              parseData.unshift(['Time', 'Happiness']);
+
+              var data = google.visualization.arrayToDataTable(parseData);
+              var start = moment(min);
+              console.log('START');
+              console.log(start);
+              var end   = moment(max);
+
+              var options = {
+                title: 'Mood Tracker ('+ start.format('MMMM Do') +' - '+ end.format('MMMM Do, YYYY') +')',
+                hAxis: {title: '', 
+                        minValue: start.toDate(), 
+                        maxValue: end.toDate(),
+  //                        format: 'EEEE',
+                        },
+                vAxis: {title: 'Happiness', minValue: 0, maxValue: 10},
+               
+                legend: 'none'
+              }; 
+
+                var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+                Bliss.log('chart');
+                Bliss.log(chart);
+                chart.draw(data, options);
+            },
+            error: function(error) {
+              alert("Error: " + error.code + " " + error.message);
+            }
+          });
+        }
+        //Load Google Charts
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+
+
+      });
+    </script>
+    <div id="chart_div" style="width: 1600px; height: 800px;"></div>
+  </body>
+</html>

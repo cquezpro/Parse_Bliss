@@ -1,0 +1,13 @@
+
+
+version  1.0.37
+
+Added Clear Notifications button, and auto-clearing notifications after 48 hours.
+
+TESTS
+
+ Simplified motivation test with install-motivation split test
+   Either show motivation form or not, remove intro for all users
+
+ split test for intro form on installation -  install-intro
+ split test for extended tracker on installation - install-extended-tracker

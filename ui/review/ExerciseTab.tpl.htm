@@ -1,0 +1,11 @@
+<div class="title <% expanded ? print('active') : '' %>"><%= name %></div>
+<div class="exercise-tab" style="<% expanded ? '' : print('display: none') %>">
+  <% if (!empty) { %>
+    <% $.each(models, function(key, exercise) { %>
+    <div class="exercise" bliss_id="<%= exercise.bliss_id %>"><%= moment(exercise.createTime * 1000).format('MMMM D, YYYY') %></div>
+    <% }) %>
+  <% } %>
+  <% if (empty) { %>
+    <div class="exercise new" bliss_id="new">add new</div>
+  <% } %>
+</div>

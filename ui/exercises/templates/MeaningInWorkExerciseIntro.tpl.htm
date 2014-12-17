@@ -1,0 +1,37 @@
+<% var test = split('miw-intro').values(['normal', 'hard']) %>
+<div id="MeaningInWorkExercise" class="default">
+   <header class="form-header">
+      <center><h2>bliss</h2></center> 
+    </header>
+    <div class="content">
+      <div class="inner clearfix">
+        <div class="container clearfix">
+          <h1 class="title">Meaning In Work</h1>
+          <% if (test == 'normal') { %>
+          <p>Is it possible for a janitor to find work more meaningful than a doctor? Research from Amy Wrzesniewski says yes.</p>
+          </br>
+          <p>Meaning In Work is an exercise that helps you transform the way you view your work. By focusing on the people you help and the skills you master in your 
+          work, you transform your work from a job into a calling.</p>
+          </br>
+          <% } %>
+          <% if (test == 'hard') { %>
+          <p>Meaning in Work super-charges your work week with a sense of motivation and passion.
+          It makes your work both more productive and more enjoyable - enabling you to get the greatest possible fulfillment from what you do.</p>
+          </br>
+
+          <p>Even the most boring job is an opportunity for self-growth and self-expression. Amy Wrzesniewski found that janitors and doctors were about equally
+          likely to view their work as a job, a career, or a calling. The difference is all in your perspective.</p>   
+          </br>
+
+          <% } %>
+          <p>If you're not employed, you can focus on either the work you would like to do, household work / other responsibilities you have, or the job search itself.</p>
+
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="btn-center">
+        <button id="nextButton" class="btn btn-default">Get Started</button>
+      </div>
+    </footer>
+</div>

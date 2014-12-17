@@ -1,0 +1,397 @@
+/**
+ *
+ *  Form defaults
+ *
+ **/
+/*input[type=range]{
+  -webkit-appearance: none;
+
+  -moz-appearance: none;
+
+  outline: 0;
+  
+  
+  
+}*/
+
+input[type="range"]{
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  outline: none;
+  height: 8px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 3px solid #27b99a;
+  background: #fff;
+  color: black;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+input[type=range]::-moz-range-track{
+  border: none;
+  height: 8px;
+  background: #fff;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type=range]::-moz-range-track:focus{
+  outline: none;
+  border: none;
+}
+
+input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+  border: 3px solid #27b99a;
+  background: #fff;
+  margin-top: -15px;
+  color: black;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+input[type=range]::-webkit-slider-thumb:after {  
+  background: #000;
+  width: 20%;
+  height: 8px; 
+  position: absolute; 
+  top : 18px;
+  width: 150px;
+  height: 6px;
+  top: 7px;
+  right: 20px;
+  box-shadow: inset 0 0 0 10px rgba(0,0,0,.3);
+}
+
+select:not(.ui-datepicker-year):not(.ui-datepicker-month) {
+  font-family: QuickSandRegular, sans-serif;
+  padding: 7px;
+  border: 1px solid #e6e6e6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #4d4d4d;
+  min-width: 300px;
+  background: url('forms/images/arrow-down.png') no-repeat scroll right center #ffffff;
+}
+
+select:not(.ui-datepicker-year):not(.ui-datepicker-month):focus {
+  
+  background: url('forms/images/arrow-down-hover.png') no-repeat scroll right center #ffffff;
+
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not(button):not(.ui-datepicker-year):not(.ui-datepicker-month),
+textarea, select {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  outline: none;
+  border: 1px solid #e6e6e6;
+}
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not(button):focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #39bb9d !important;
+}
+
+
+
+
+/**
+ *
+ *  jQuery ui date form overrides
+ *
+ *
+ **/
+.ui-datepicker-trigger {
+  display: inline-table;
+  vertical-align: sub;
+  margin-left: 10px;
+}
+
+/**
+ *  Bliss View Fields
+ */
+
+.slider-container {
+  height: 100px;
+  margin: auto;
+  position: relative;
+  color: white;
+}
+.field-track-container {
+  position: relative;
+  margin: 10px auto 25px;
+  top: 0;
+  width: 100%;
+}
+
+.field-track-container input[type=range]{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.field-track-container .range-container{
+  text-align: center;
+}
+
+
+.field-track-container .status{
+  color: #fff;
+}
+
+.field-track-container .status.left{
+  float: left;
+}
+.field-track-container .status.right {
+  float: right;
+}
+
+.field-track-container{
+  text-align: center;
+}
+
+.slider-container .help {
+  text-align: center;
+  font-weight: bold;
+}
+
+.slider-container{
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 10px;
+  margin: 0;
+  overflow: hidden;
+  background: #27b99a;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  min-height: 110px;
+  padding-bottom: 15px;
+}
+
+.slider-container .valuebox{
+  padding: 0px 0 10px;
+  margin-bottom: 1em;
+}
+
+.slider-container .valuebox .inner span{
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+.slider-container .valuebox h3{
+  opacity: 1;
+}
+.slider-container .slide-value {
+  color: #fff;
+  font-size: 20px;
+  font-family: open_sansregular;
+  padding: 8px 0;
+  width: 55px;
+  margin: 19px auto 0px;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 2px;
+  border-radius: 100%;
+
+}
+
+.slider-container .divider{
+  border-top: 1px solid #fff;
+  width: 85%;
+  margin: 10px auto;
+}
+
+.status-container{
+  margin-bottom: 1.5em;
+}
+
+@media only screen and (max-width : 480px){
+
+}
+
+
+/**
+ * Default Form styles
+ */
+
+.default textarea{
+  width: 98%;
+  resize: none;
+  height: 133px;
+}
+
+.default textarea:not(.multi_string textarea) {
+  display: block;
+  height: 133px;
+}
+
+.default .multi_string textarea {
+  margin-top: 10px;
+  height: 77px;
+}
+
+.default label{
+  display: block;
+  text-align: left;
+  margin-right: 0;
+  width: auto;
+}
+
+.default input[type="checkbox"] + label,
+.default input[type="radio"] + label{
+  
+  display: inline-table;
+  vertical-align: middle;
+
+}
+
+.default input[type="checkbox"] + label,
+.default input[type="radio"] + label,
+.default input[type="checkbox"],
+.default input[type="radio"]{
+  line-height: 1.8;
+  margin: 0;
+}
+
+.default input[type="checkbox"],
+.default input[type="radio"]{
+  margin-right: 5px;
+}
+
+.default fieldset{
+  padding: 10px;
+}
+
+.default fieldset,.default fieldset legend{
+  margin-bottom: 1.5em;
+  
+}
+
+.default fieldset legend{
+  margin-bottom: 0em;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+
+.default .radio-checkbox-wrapper select,
+.default .radio-checkbox-wrapper label {
+  display: inline-table;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.default .radio-checkbox-wrapper input[type="checkbox"]:first-child,
+.default .radio-checkbox-wrapper input[type="checkbox"]:first-child + label{
+  display: inline-table;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.default .radio-checkbox-wrapper input[type="select"],
+.default .radio-checkbox-wrapper input[type="checkbox"] {
+  margin-right: 1em;
+}
+
+.default .radio-checkbox-wrapper {
+  display: block;
+}
+
+/**
+ * End of Default Form styles
+ */
+
+/**
+ *
+ * Inverse form styles
+ *
+ **/
+
+.inverse label:not(.input-radio):not(.input-checkbox) {
+  display: inline-table;
+  vertical-align: middle;
+  text-align: right;
+  margin-right: 1.5em;
+  width: 30%;
+}
+
+.inverse label{ line-height: 1.5; font-size: 14px; min-width: 30%;}
+.inverse input{ font-size: 14px; }
+
+.inverse legend{
+  float: left;
+  min-width: 192px;
+  text-align: right;
+  margin-right: 1.5em;
+}
+
+.inverse input[type="email"],
+.inverse input[type="number"],
+.inverse input[type="password"],
+.inverse input[type="tel"],
+.inverse input[type="url"],
+.inverse input[type="text"],
+.inverse textarea {
+  padding: 7px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.inverse .form-container {
+  width: 96%;
+  margin: 2em auto;
+}
+.inverse .form-container .field-container {
+  padding: 10px 0;
+}
+ 
+.inverse .radio-checkbox-wrapper {
+  display: inline-table;
+}
+.inverse .radio-checkbox-wrapper input[type="radio"],
+ .radio-checkbox-wrapper input[type="checkbox"] {
+  margin-right: 1em;
+}
+.inverse .radio-checkbox-wrapper label,
+.inverse .radio-checkbox-wrapper input[type="radio"],
+.inverse .radio-checkbox-wrapper input[type="checkbox"] {
+  display: inline-table;
+  vertical-align: middle;
+  margin-bottom: 1em;
+}
+
+/**
+ *
+ *  End of inverse form style
+ *
+ **/
+
+#SettingsForm table thead tr {
+  height: 25px;
+}
+#SettingsForm .header-title center {
+  margin-bottom: 30px;
+}

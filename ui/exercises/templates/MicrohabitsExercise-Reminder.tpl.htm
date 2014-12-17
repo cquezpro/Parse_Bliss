@@ -1,0 +1,51 @@
+<div id="MicrohabitsExercise" class="default">
+  <header class="form-header">
+    <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+    <center><h2>bliss</h2></center>
+  </header>>
+  
+  <figure class="main-image">
+    <img src="<%= Bliss.getLocalUrl('ui/exercises/images/Step.jpg')  %>">
+    <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+    <figcation class="title white">Microhabits</figcaption>
+  </figure>
+
+  <div class="content">
+    <div class="inner clearfix">
+      <div class="container clearfix">
+        <p> <b>Mircohabit:</b></p>
+        <% microhabit_display =  microhabit.substring(0, 1).toLowerCase() + microhabit.substring(1) %>
+        <p><%= (time == 'other') ? other : time_options[time] %>, I will <%= microhabit_display %> because it will bring me the following benefits:</p>
+        <p><%= benefits %>
+
+        <p> <b>Remind me every day at:</b></p>
+      <select name="hour" id="hour">
+        <option value="" <% hour == '' ? print('selected="selected"') : '-' %>>-</option>
+        <% $.each(hour_options, function(key, hour_option) { %>
+        <option value="<%= hour_option %>" <% hour == hour_option ? print('selected="selected"') :'' %>> <%= hour_option %></option>
+        <% }) %>
+      </select>
+      <select name="minute" id="minute">
+        <option value="" <% minute == '' ? print('selected="selected"') : '' %>>-</option>
+        <% $.each(minute_options, function(key, minute_option) { %>
+        <option value="<%= key %>" <% minute == key ? print('selected="selected"') :'' %>> <%= minute_option %></option>
+        <% }) %>
+      </select>
+      <select name="ampm" id="ampm">
+        <option value="" <% ampm == '' ? print('selected="selected"') : '' %>>-</option>
+        <% $.each(ampm_options, function(key, ampm_option) { %>
+        <option value="<%= key %>" <% ampm == key ? print('selected="selected"') :'' %>> <%= ampm_option %></option>
+        <% }) %>
+      </select>
+      <p>You can easily delete your reminder when your habit becomes hard-wired and you no longer need it.</p>
+    </div>
+  </div>
+  </div>
+
+  <footer id="footer">
+      <div class="btn-center">
+        <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+      </div>
+  </footer>
+</div>

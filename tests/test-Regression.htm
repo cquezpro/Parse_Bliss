@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/lib/jquery-ui.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <script type="text/javascript" src="/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/lib/ejs/ejs.js"></script>
+    <script type="text/javascript" src="/lib/parse.js"></script>
+    <script type="text/javascript" src="/dev/stacktrace/stacktrace.js"></script>
+    <script type="text/javascript" src="/classes/Track.js"></script>
+    <script type="text/javascript" src="/classes/Storage.js"></script>
+    <script type="text/javascript" src="/Bliss.js"></script>
+    <script type="text/javascript" src="/classes/User.js"></script>
+    <script type="text/javascript" src="/classes/SplitTest.js"></script>
+  </head>
+  <body>
+    <script>
+      Parse.initialize(Bliss.appId, Bliss.javascriptId);
+      Bliss.log('hey');
+      User(function(){
+        Bliss.log('user');
+  //          Storage.clear('test-funky_test');
+        new SplitTest('funky_test').regression(1, 12, function(timesPerDay) {
+          alert('timesPerDay is '+ timesPerDay);
+          Bliss.log('regression');
+        });
+        Storage.get(null, function(vars) {
+          Bliss.log(vars);
+        });
+      });
+    </script>
+  </body>
+</html>

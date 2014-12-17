@@ -1,0 +1,52 @@
+<div id="TransformingProblemsExercise" class="inverse">
+    <header class="inverse-header">
+      <a href="#" id="previous" title="Previous entry"><img src="<%= Bliss.getLocalUrl('images/left-arrow.png') %>"></a>
+        <center>
+        <a href="/">
+           <img src="<%= Bliss.getLocalUrl('ui/forms/images/logo.png') %>" alt="Bliss Logo">
+        </a>
+        </center>
+      <a href="#" id="next" title="Next entry"><img src="<%= Bliss.getLocalUrl('images/right-arrow.png') %>"></a>
+    </header>
+
+    <div class="review content">
+      <div class="container clearfix">
+          <section class="title-container">
+            <h2 class="title">Transforming Problems</h2>
+            <% if (typeof createdAt != 'undefined') { %>
+              <p class="exercise-date"><%= moment(createdAt).format('MMMM D, YYYY') %></p>
+            <% } %>
+          </section>
+          <center>
+            <div class="actions">
+              <a href="" class="view_action_add" title="Add exercise">
+                <img src="<%= Bliss.getLocalUrl('ui/review/icons/add-icon.png') %>" alt="add exercise">
+              </a>
+              <a href="" class="view_action_edit edit" title="Edit exercise">                  
+                  <img src="<%= Bliss.getLocalUrl('ui/review/icons/edit-icon.png') %>" alt="edit exercise">
+              </a>
+              <a href="#" class="view_action_delete" title="Delete exercise">               
+                  <img src="<%= Bliss.getLocalUrl('ui/review/icons/delete-icon.png') %>" alt="delete exercise">
+              </a>
+            </div>
+          </center>
+
+      <h3>Start by identifying the single problem that is troubling you most.</h3>
+      </div>
+
+      <div class="container clearfix">
+      <strong>Problem:</strong>
+        <p name="problem" index="" ><%= problem %></p>
+         <br>
+         <strong>How is this problem an opportunity for growth?</strong>
+          <p name="transformation" index="" ><%= transformation %></p>
+         <br>
+
+          <strong>How do you choose to respond to the situation?</strong>
+          <p name="response" index="" ><%= response %></p>
+      </div>
+    </div>
+  <footer id="footer">
+  </footer>
+  
+</div>

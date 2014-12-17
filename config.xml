@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+        xmlns:android = "http://schemas.android.com/apk/res/android"
+        id        = "com.cordova.bliss"
+        version   = "1.0.52">
+
+    <name>Bliss</name>
+    <description>
+        Bliss mobile application
+    </description>
+	
+    <author href="http://www.google.com" email="heydemo13@gmail.com">
+      John De Mott
+    </author>
+
+    <access origin="*" />
+    
+    <access origin="https://api.parse.com" />
+    <content src="index.html"/>
+    <!--
+    <feature name="debug-server" required="true">
+      <param name="domain" value="http://192.168.1.50:8080"/>
+      <param name="key" value="blissmass"/>
+    </feature>
+    -->
+	
+	<icon src="icon.png" />
+	<!-- Define app icon for each platform. -->
+    <icon src="phonegap/res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="phonegap/res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="phonegap/res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="phonegap/res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="phonegap/res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="phonegap/res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
+    <icon src="phonegap/res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
+    <icon src="phonegap/res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+	
+    <!-- Define app splash screen for each platform. -->
+    <gap:splash src="phonegap/res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="phonegap/res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="phonegap/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
+	  <gap:splash src="phonegap/res/screen/ios/screen-iphone-landscape.png"        gap:platform="ios"     width="480" height="320" />
+	  <gap:splash src="phonegap/res/screen/ios/screen-iphone-landscape-2x.png"     gap:platform="ios"     width="960" height="640" />
+    <gap:splash src="phonegap/res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1004" />
+    <gap:splash src="phonegap/res/screen/ios/screen-ipad-portrait-2x.png"        gap:platform="ios"     width="1536" height="2008" />
+    <gap:splash src="phonegap/res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
+    <gap:splash src="phonegap/res/screen/ios/screen-ipad-landscape-2x.png"       gap:platform="ios"     width="2048" height="1496" />
+
+	
+    <!-- Preferences for iOS -->
+	<preference name="phonegap-version"           value="3.6.3" />          <!-- all: current version of PhoneGap -->
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="false" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="TopActivityIndicator" value="gray" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" /> <!-- page, column -->
+    <preference name="PaginationMode" value="unpaginated" /> <!-- unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft -->
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="keepRunning" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+
+    <preference name="AndroidLaunchMode" value="singleInstance" />
+    <preference name="AndroidAlwaysRetainTaskState" value="true" />
+
+    <gap:config-file platform="android" parent="/manifest/application">
+        <activity android:launchMode="singleInstance" />
+    </gap:config-file>
+
+	<!-- Core plugins -->
+	<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+    <gap:plugin name="org.apache.cordova.device" version="0.2.8" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <!--
+    <gap:plugin name="de.appplant.cordova.plugin.background-mode" />
+    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.file" />
+	-->
+
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+
+</widget>

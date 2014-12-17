@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="<%= Bliss.getLocalUrl('tracker.css') %>" type="text/css" media="all">
+<link rel="stylesheet" href="<%= Bliss.getLocalUrl('lib/css/icomoon.css') %>" type="text/css" media="all">
+<div id="bliss-track">
+  <div id="logo">
+    <div id="title">bliss mood tracker</div>
+    <div id="prompt">How do you feel right now?</div>
+  </div>
+  <div id="track-container">
+    <span id="worst" class="status">Extremely Bad</span>
+      <div class="slider-container" >
+        <div id="slide-value">5.0</div>
+        <input id="bliss-slider" type="range"  min="0" max="100" />
+        <div class="help">You can also use your keyboard to control the tracker</div>
+      </div>
+    <span id="best" class="status">Extremely Good</span>
+  </div>
+  <button id="bliss-button">Submit</button>
+  <a target="_blank" href="<%= Bliss.getExerciseUrl('SettingsForm') %>"><span class='settings-button icon-cog5' title='Settings'></span></a>
+  <span class='close-button icon-close' title='Close tracker'></span>
+  <% if (Bliss.dev) { %>
+  <h2 class="dev-notice">DEV</h2>
+  <% } %>
+</div>

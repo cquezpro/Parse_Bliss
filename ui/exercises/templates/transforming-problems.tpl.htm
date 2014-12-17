@@ -1,0 +1,42 @@
+<div id="TransformingProblemsExercise" class="default">
+    <header class="form-header">
+      <center><h2>bliss</h2></center>
+    </header>
+    <figure class="main-image">
+      <img src="<%= Bliss.getLocalUrl('ui/exercises/images/Woman.jpg')  %>">
+      <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+      <figcaption class="title">Transforming Problems</figcaption>
+    </figure>
+    <div class="content">
+      <div class="inner clearfix">
+      <div class="container clearfix no-headings">
+        <% if (typeof createdAt != 'undefined') { %>
+          <h3><%= Bliss.formatDate(createdAt) %></h3>
+        <% } %>
+
+        <p>Start by identifying the single problem that is troubling you most. It could be a source of stress, discomfort, anger or sadness</p>
+      </div>
+
+       <div class="container clearfix">
+       <br />
+       <label for="problem">Problem:</label>
+       <textarea name="problem" id="problem" index="" ><%= problem %></textarea>
+        <p class="help">Example: No matter how hard I work my boss is critical and unsatisfied.</p>
+       <br />
+       <p>How is this problem an opportunity for growth? How could dealing with it make you a better person? What new skills could it help you develop? Are there tangible
+       benefits that may come from dealing with this problem effectively?</p>
+        <textarea name="transformation" index="" ><%= transformation %></textarea>
+        <p class="help">Example: Dealing with a critical boss is an opportunity to learn human psychology. If I can learn to impress someone this demanding, then I'll be able to easily satisfy customers when I start my own business. While she is sometimes unreasonable, her demands also give me the opportunity to get even better at what I do.</p>
+        <br />
+        <p>How do you choose to respond to the situation?</p><p> What values and strengths will you use in your response?</p>
+        <textarea name="response" index="" ><%= response %></textarea>
+        <p class="help">Example: I'm good at reading people and can use that to anticipate things she'll likely object to in my work and prepare a response. I know my own value and will not let her affect my opinion of myself. If she becomes unreasonable I will smile to myself and think of her as an irate customer complaining to world-class customer service rep. This will be great experience for the future -  I'll use her as an example of how to deal with angry people when I'm training my employees at my new company.</p>
+        </div>
+      </div>
+  </div>
+  <footer id="footer">
+    <div class="btn-center">
+    <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+    </div>
+  </footer>
+</div>

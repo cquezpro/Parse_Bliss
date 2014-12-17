@@ -1,0 +1,8 @@
+*.swp
+*.swo
+*.swn
+*.swm
+/nbproject/
+settings.php
+images/backgrounds/*
+diff.patch

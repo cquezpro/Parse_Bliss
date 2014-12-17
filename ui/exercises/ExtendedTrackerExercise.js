@@ -1,0 +1,37 @@
+ExtendedTrackerExercise = BlissExercise.extend({
+  name: 'ExtendedTrackerExercise',
+  normal_exercise: false,
+  display_name: 'Extended Tracker',
+  description: "",
+  displayInPopup: 'when_scheduled',
+  templates: ['ExtendedTrackerExercise.tpl.htm'],
+  dataClass: 'ExtendedTracker',
+  fields: {
+    happy:             {defaultValue: '', dataType: 'string'},
+    angry:             {defaultValue: '', dataType: 'string'},
+    excited:           {defaultValue: '', dataType: 'string'},
+    motivated:         {defaultValue: '', dataType: 'string'},
+    tired:             {defaultValue: '', dataType: 'string'},
+    stressed_out:      {defaultValue: '', dataType: 'string'},
+    sad:               {defaultValue: '', dataType: 'string'},
+    good_self:         {defaultValue: '', dataType: 'string'},
+    life_satisfaction: {defaultValue: '', dataType: 'string'},
+  },
+  constants: {
+    sliders: [
+      {name: 'happy', question: 'How happy have you felt today?'},
+      {name: 'angry', question: 'How angry have you felt today?'},
+      {name: 'excited', question: 'How excited have you felt today?'},
+      {name: 'motivated', question: 'How motivated have you felt today?'},
+      {name: 'tired', question: 'How tired have you felt today?'},
+      {name: 'stressed_out', question: 'How stressed out have you felt today?'},
+      {name: 'sad', question: 'How sad have you felt today?'},
+      {name: 'good_self', question: 'How good about yourself have you felt today?'},
+      {name: 'life_satisfaction', question: 'How satisfied with your life have you felt today?'},
+    ],
+    mood_options: {1: 'Very slightly or not at all', 2: 'A little', 3: 'Moderately', 4: 'Quite a Bit', 5: 'Extremely'},
+  },
+  completionMessage: '',
+  noCompletionMessageTest: true,
+});
+

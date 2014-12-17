@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="<%= Bliss.getLocalUrl('tracker.css') %>" type="text/css" media="all">
+<link rel="stylesheet" href="<%= Bliss.getLocalUrl('lib/css/icomoon.css') %>" type="text/css" media="all">
+<div id="bliss-track">
+  <div id="logo">
+    <div id="title">bliss mood tracker</div>
+    <div id="prompt">How do you feel right now?</div>
+  </div>
+  <div id="track-container">
+    <span id="worst" class="status">Extremely Bad</span>
+      <div id="radio-container">
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="1">1</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="2">2</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="3">3</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="4">4</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="5">5</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="6">6</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="7">7</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="8">8</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="9">9</span></span>
+        <span class="radio-container"><span class="radio"><input type="radio" name="track_radio" class="track_radio" value="10">10</span></span>
+      </div>
+    <span id="best" class="status">Extremely Good</span>
+  </div>
+  <button id="bliss-button">Submit</button>
+  <a target="_blank" href="<%= Bliss.getExerciseUrl('SettingsForm') %>"><span class='settings-button icon-cog5' title='Settings'></span></a>
+  <span class='close-button icon-close' title='Close tracker'></span>
+  <% if (Bliss.dev) { %>
+  <h2 class="dev-notice">DEV</h2>
+  <% } %>
+</div>

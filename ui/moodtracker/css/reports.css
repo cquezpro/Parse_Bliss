@@ -1,0 +1,23 @@
+/* 
+    Created on : 08 26, 14, 8:19:33 PM
+    Author     : rmenguito
+*/
+
+.bliss-form .normal-btn {
+    position: static;
+    margin: 0;
+    margin-top: 20px;
+    width: 150px;
+}
+.bliss-form .btn-sm {
+    width: 25px;
+}
+.pull-right{
+	float: right;
+}
+.pull-left{
+	float: left;
+}
+.clear-fix{
+	clear: both;
+}

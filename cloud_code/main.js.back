@@ -1,0 +1,168 @@
+
+// Use Parse.Cloud.define to define as many cloud functions as you want.
+// For example:
+var _ = require('underscore');
+var moment = require('moment');
+
+Parse.Cloud.define("assignTestGroup", function(request, response) {
+  var userTestGroup = Parse.Object.extend("userTestGroup");
+  var query = new Parse.Query("userTestGroup");
+  var count = {};
+  query.equalTo("test", request.params.test);
+  query.find({useMasterKey: true,
+    success: function(results) {
+      _.each(results, function(result) {
+        var groupName = result.get("groupName");
+        if (typeof(count[groupName]) == 'object') {
+          count[groupName].count += 1; 
+        }
+        else {
+          count[groupName] = {'groupName': groupName, 'count': 1};
+        }
+      });
+      var lowestGroup = _.min(count, function(group) { return group.count; });
+      response.success(lowestGroup.groupName);
+    },
+    error: function() {
+      response.error('Crummy old error');
+    }
+  });
+});
+
+
+Parse.Cloud.define("tester", function(request, response) {
+  Parse.Cloud.run('helper', {test: 'test-timesPerDay'}, {
+    success: function(data) {
+      response.success(data);
+      Bliss.log(data);
+    },
+    error: function(error, stuff) {
+      Bliss.log('error');
+      Bliss.log(error);
+      Bliss.log(stuff);
+    }
+  });
+});
+
+
+Parse.Cloud.define("getTestResults", function(request, response) {
+  var userTestGroups, activeUsers;
+
+  getUserTestGroups().then(function(testGroups) {
+    userTestGroups = testGroups;
+
+  }).then(function() {
+    return getActiveUsers();
+
+  }).then(function(activeUsers) {
+    _.each(userTestGroups, function(testGroup, user_id) {
+      if (!userTestGroups[user_id]) {
+        userTestGroups[user_id] = {};
+      }
+      userTestGroups[user_id].active = activeUsers[user_id] ? 1 : 0;
+    });
+    response.success(userTestGroups);
+  });
+
+});
+
+Parse.Cloud.define("getTests", function(request, response) {
+  Parse.Cloud.useMasterKey();
+  var query = new Parse.Query("userTestGroup");
+  var params = request.params;
+  query.limit(1000);
+  if (params.test) {
+    query.equalTo("test", params.test);
+  }
+  query.find({
+    success: function(results) {
+      response.success(results);
+    }
+  });
+});
+
+Parse.Cloud.define("getActiveUsers", function(request, response) {
+  var query = new Parse.Query("parseTrack");
+  var count = {};
+  var promise = new Parse.Promise();
+  var users = {};
+  var cuttoff = moment().subtract('days', 30).toDate();
+  query.limit(1000);
+  query.greaterThan('createdAt', cuttoff);
+  query.find().then(function(tracks) {
+    _.each(tracks, function(track) {
+      var user_id = track.get('user').id;
+      users[user_id] = user_id;
+    });
+    response.success(users);
+  });
+});
+
+
+
+function getUserTestGroups() {
+  Parse.Cloud.useMasterKey();
+  var query = new Parse.Query("userTestGroup");
+  var promise = new Parse.Promise();
+  var users = {};
+  query.limit(1000);
+  query.find().then(function(userTestGroups) {
+    _.each(userTestGroups, function(userTestGroup) {
+      attrs = userTestGroup.attributes;
+      var user_id = userTestGroup.get('user').id;
+      //Ensure our testGroups object is created before we assign data to it
+      if (!users[user_id]) {
+        users[user_id] = {testGroups: {}};
+      }
+      users[user_id].testGroups[attrs.test] = attrs.groupName;
+    });
+    promise.resolve(users);  
+  });
+  return promise;
+}
+
+function getActiveUsers() {
+  var query = new Parse.Query("parseTrack");
+  var count = {};
+  var promise = new Parse.Promise();
+  var users = {};
+  var cuttoff = moment().subtract('days', 30).toDate();
+  query.greaterThan('createdAt', cuttoff);
+  query.find().then(function(tracks) {
+    _.each(tracks, function(track) {
+      var user_id = track.get('user').id;
+      users[user_id] = user_id;
+    });
+    promise.resolve(users);
+  });
+  return promise;
+}
+
+Parse.Cloud.define("getActiveUsers", function(request, response) {
+  var query = new Parse.Query("parseTrack");
+  var count = {};
+  var promise = new Parse.Promise();
+  var users = {};
+  var cuttoff = moment().subtract('days', 30).toDate();
+  query.limit(1000);
+  query.greaterThan('createdAt', cuttoff);
+  query.find().then(function(tracks) {
+    _.each(tracks, function(track) {
+      var user_id = track.get('user').id;
+      users[user_id] = user_id;
+    });
+    response.success(users);
+  });
+});
+
+Parse.Cloud.define("fixAcl", function(request, response) {
+  var query = new Parse.Query("GratitudeExercise");
+  query.limit(1000);
+  query.find().then(function(exercises) {
+    _.each(exercises, function(exercise) {
+      var user_id = track.get('user').id;
+      users[user_id] = user_id;
+    });
+    response.success(users);
+  });
+});

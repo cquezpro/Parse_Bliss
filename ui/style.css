@@ -1,0 +1,982 @@
+/**
+ *
+ *
+ *  Font imports
+ *
+ */
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../../fonts/opensans/opensans-bold-webfont.eot');
+    src: url('../../fonts/opensans/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-bold-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-bold-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-bold-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansbold_italic';
+    src: url('../../fonts/opensans/opensans-bolditalic-webfont.eot');
+    src: url('../../fonts/opensans/opensans-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-bolditalic-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-bolditalic-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-bolditalic-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-bolditalic-webfont.svg#open_sansbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../../fonts/opensans/opensans-light-webfont.eot');
+    src: url('../../fonts/opensans/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-light-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-light-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-light-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sanssemibold_italic';
+    src: url('../../fonts/opensans/opensans-semibolditalic-webfont.eot');
+    src: url('../../fonts/opensans/opensans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-semibolditalic-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-semibolditalic-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-semibolditalic-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-semibolditalic-webfont.svg#open_sanssemibold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansextrabold_italic';
+    src: url('../../fonts/opensans/opensans-extrabolditalic-webfont.eot');
+    src: url('../../fonts/opensans/opensans-extrabolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-extrabolditalic-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-extrabolditalic-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-extrabolditalic-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-extrabolditalic-webfont.svg#open_sansextrabold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansextrabold';
+    src: url('../../fonts/opensans/opensans-extrabold-webfont.eot');
+    src: url('../../fonts/opensans/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-extrabold-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-extrabold-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-extrabold-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-extrabold-webfont.svg#open_sansextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('../../fonts/opensans/opensans-italic-webfont.eot');
+    src: url('../../fonts/opensans/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-italic-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-italic-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-italic-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sanslight_italic';
+    src: url('../../fonts/opensans/opensans-lightitalic-webfont.eot');
+    src: url('../../fonts/opensans/opensans-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-lightitalic-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-lightitalic-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-lightitalic-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-lightitalic-webfont.svg#open_sanslight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('../../fonts/opensans/opensans-semibold-webfont.eot');
+    src: url('../../fonts/opensans/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-semibold-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-semibold-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-semibold-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../../fonts/opensans/opensans-regular-webfont.eot');
+    src: url('../../fonts/opensans/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/opensans/opensans-regular-webfont.woff2') format('woff2'),
+         url('../../fonts/opensans/opensans-regular-webfont.woff') format('woff'),
+         url('../../fonts/opensans/opensans-regular-webfont.ttf') format('truetype'),
+         url('../../fonts/opensans/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'quicksandbold';
+    src: url('../../fonts/quicksand/quicksand-bold-webfont.eot');
+    src: url('../../fonts/quicksand/quicksand-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/quicksand/quicksand-bold-webfont.woff2') format('woff2'),
+         url('../../fonts/quicksand/quicksand-bold-webfont.woff') format('woff'),
+         url('../../fonts/quicksand/quicksand-bold-webfont.ttf') format('truetype'),
+         url('../../fonts/quicksand/quicksand-bold-webfont.svg#quicksandbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksanddash';
+    src: url('../../fonts/quicksand/quicksand_dash-webfont.eot');
+    src: url('../../fonts/quicksand/quicksand_dash-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/quicksand/quicksand_dash-webfont.woff2') format('woff2'),
+         url('../../fonts/quicksand/quicksand_dash-webfont.woff') format('woff'),
+         url('../../fonts/quicksand/quicksand_dash-webfont.ttf') format('truetype'),
+         url('../../fonts/quicksand/quicksand_dash-webfont.svg#quicksanddash') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('../../fonts/quicksand/quicksand-regular-webfont.eot');
+    src: url('../../fonts/quicksand/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/quicksand/quicksand-regular-webfont.woff2') format('woff2'),
+         url('../../fonts/quicksand/quicksand-regular-webfont.woff') format('woff'),
+         url('../../fonts/quicksand/quicksand-regular-webfont.ttf') format('truetype'),
+         url('../../fonts/quicksand/quicksand-regular-webfont.svg#quicksandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksanditalic';
+    src: url('../../fonts/quicksand/quicksand-italic-webfont.eot');
+    src: url('../../fonts/quicksand/quicksand-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/quicksand/quicksand-italic-webfont.woff2') format('woff2'),
+         url('../../fonts/quicksand/quicksand-italic-webfont.woff') format('woff'),
+         url('../../fonts/quicksand/quicksand-italic-webfont.ttf') format('truetype'),
+         url('../../fonts/quicksand/quicksand-italic-webfont.svg#quicksanditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandlight';
+    src: url('../../fonts/quicksand/quicksand-light-webfont.eot');
+    src: url('../../fonts/quicksand/quicksand-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/quicksand/quicksand-light-webfont.woff2') format('woff2'),
+         url('../../fonts/quicksand/quicksand-light-webfont.woff') format('woff'),
+         url('../../fonts/quicksand/quicksand-light-webfont.ttf') format('truetype'),
+         url('../../fonts/quicksand/quicksand-light-webfont.svg#quicksandlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandlight_italic';
+    src: url('../../fonts/quicksand/quicksand-lightitalic-webfont.eot');
+    src: url('../../fonts/quicksand/quicksand-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/quicksand/quicksand-lightitalic-webfont.woff2') format('woff2'),
+         url('../../fonts/quicksand/quicksand-lightitalic-webfont.woff') format('woff'),
+         url('../../fonts/quicksand/quicksand-lightitalic-webfont.ttf') format('truetype'),
+         url('../../fonts/quicksand/quicksand-lightitalic-webfont.svg#quicksandlight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandbold_italic';
+    src: url('../../fonts/quicksand/quicksand-bolditalic-webfont.eot');
+    src: url('../../fonts/quicksand/quicksand-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/quicksand/quicksand-bolditalic-webfont.woff2') format('woff2'),
+         url('../../fonts/quicksand/quicksand-bolditalic-webfont.woff') format('woff'),
+         url('../../fonts/quicksand/quicksand-bolditalic-webfont.ttf') format('truetype'),
+         url('../../fonts/quicksand/quicksand-bolditalic-webfont.svg#quicksandbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/**
+ *
+ *  General styles for fonts and form-inputs
+ *
+ **/
+
+body{
+  margin: 1em auto;
+ }
+
+h1,h2,figcaption{
+  font-family: quicksandregular;
+  font-weight: bold;
+  opacity: 0.85;
+ 
+}
+
+.default h3,h4,h5,h6{
+  font-family: Arial, Helvetica, Sans-serif;
+  opacity: 0.85;
+}
+
+.inverse h3,
+.inverse h4,
+.inverse h5,
+.inverse h6{
+  font-family: quicksandregular;
+  opacity: 0.85;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 1.5em 0 1em;
+}
+
+h1 { font-size: 28px; }
+h2{ font-size: 22px; }
+h3{ font-size: 16px;  }
+h4{ font-size: 14px; }
+h5{ font-size: 15px;  }
+h6{ font-size: 12px;  }
+p{ line-height: 1.8; opacity: 0.85;}
+
+.inverse{
+  font-family: quicksandregular;
+}
+
+
+
+/**
+ *  
+ * Layouts
+ *
+ **/
+
+.default{
+  width: 37%;
+  margin: 0 auto;
+}
+
+.default header{
+  background-color: #27b99a;
+  position: relative;
+  content: " ";
+  font-size: 0;
+}
+
+.default .content{
+  font-size: 14px;
+  word-spacing: 3px;
+  color: #000;
+  padding-bottom: 2em;
+  line-height: 1.8;
+  border-style: solid;
+  border-color: #27b99a;
+  border-width: 0px 2px 0 2px;
+}
+
+
+.inverse{
+  width: 50%;
+  margin: 0 auto;
+  border-width: 0px 1px 0px 1px;
+  border-style: solid;
+  border-color: #ececec;
+}
+
+.inverse header{
+  background: #4d4d4d;
+  padding: 1em 0;
+}
+
+.inverse .content {
+  padding: 10px 10px 2em 10px;
+  
+}
+
+.inverse a{
+  text-decoration: none;
+  color: #39bb9d;
+}
+
+
+.default footer#footer, .inverse footer#footer{
+  background: #333333;
+  padding: 1.5em 0;
+  min-height: 2em;
+  margin-bottom: 50px;
+}
+
+
+/**
+ *
+ *  End of layouts
+ **/
+
+
+/**
+*
+* Default general styling
+*
+**/
+
+.default ul{
+  list-style-position: outside;
+  margin-left: 1.3em;
+}
+
+.default ul li{
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica;
+  line-height: 1.5;
+}
+
+.default header h2{
+  padding: 23px 0;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  font-size: 32px;
+  font-weight: normal;
+  font-family: quicksandregular;
+  opacity: 1;
+}
+
+.inverse header{
+  position: relative;
+}
+
+.default header #previous, 
+.default header #next {
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  height: 32px;
+  display: none;
+  opacity: .5;
+  z-index: 100;
+}
+
+.inverse header #previous, 
+.inverse header #next {
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  height: 32px;
+  display: none;
+  opacity: .5;
+  z-index: 100;
+}
+
+.default header #previous:hover, 
+.default header #next:hover {
+  opacity: .8;
+}
+
+.inverse header #previous:hover, 
+.inverse header #next:hover {
+  opacity: .8;
+}
+
+.default header:hover #previous, 
+.default header:hover #next {
+  display: block;
+}
+
+.inverse header:hover #previous, 
+.inverse header:hover #next {
+  display: block;
+}
+.default header #previous {
+  left: 10px;
+}
+
+.inverse header #previous {
+  left: 10px;
+}
+
+.default header #next {
+  right: 10px;
+}
+
+.inverse header #next {
+  right: 10px;
+}
+
+
+/**
+  *
+  * End Default general styling
+  *
+  **/
+
+
+
+.short-intro{
+  margin-bottom: 3em;
+}
+
+.short-intro h1{
+  padding: 1em 0 0;
+}
+
+.short-intro .text{
+  padding: 0 1.5em;
+  font-style: italic;
+  font-family: Arial;
+}
+
+#app-bar-video {
+  margin: auto;
+  width: 400px;
+  border: 1px solid black;
+}
+#app-bar-video-container {
+  margin: auto;
+  text-align: center;
+}
+.app-icon {
+  position: relative;
+  top: 10px;
+}
+
+#arrow-image {
+  position: fixed;
+  right: 300px;
+  top: 0px;
+}
+
+
+
+/**
+ * Misc styles @ TODO refactor
+ **/
+
+.reminder {
+  background-color: #27b99a;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  color: white;
+}
+.reminder .logo-container {
+  width: 150px;
+  float: left;
+  height: 100%;
+  margin-left: 10px;
+  position: relative;
+}
+.reminder .logo {
+  position: absolute;
+  color: white;
+  font-family: quicksandregular;
+  font-size: 32px;
+  top: 50%;
+  margin-top: -16px;
+}
+.reminder .content {
+  width: 70%;
+  float: left;
+}
+.reminder .content h1 {
+  font-size: 18px;
+  padding: 0;
+}
+.reminder .benefits {
+  width: 60%;
+}
+
+#close_button {
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+#reminder_settings {
+  color: white;
+  position: absolute;
+  top: 5px;
+  font-weight: bold;
+  right: 30px;
+}
+
+ /**
+ *
+ *  Styles for button and submit buttons
+ *
+ **/
+
+
+.btn{
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-center{
+  text-align: center;
+}
+
+.btn-default{
+  font-family: Arial, Helvetica, Sans-serif;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 5px 30px;
+  font-size: 14px;
+  color: #333;
+}
+
+.btn-block{
+  width: 100%;
+}
+
+.btn.btn-default:focus {
+  
+}
+
+.btn.btn-small{
+   padding: 5px;
+   font-size: 16px;
+}
+
+
+
+.btn.btn-medium{
+  font-size: 18px;
+  padding: 10px;
+}
+
+.btn.btn-success {
+  outline: none;
+  background: #39bb9d;
+  border: 1px solid #39bb9d;
+  color: #fff;
+  font-size: 18px;
+  font-family: quicksandregular;
+}
+
+.btn.btn-block{
+   outline: none;
+}
+
+.btn.btn-block:focus{
+  border: 1px dotted #b3b3b3;
+}
+
+ .btn.btn-success span.arrow {
+  font-size: 20px;
+}
+
+ .btn.btn-success:hover {
+  background: transparent;
+  border: 1px solid #fff;
+}
+ .btn.btn-success:focus {
+  background: transparent;
+  border: 1px dotted #39bb9d;
+  color: #39bb9d;
+}
+.btn-left {
+  text-align: left;
+  margin: 1% 1.5em 1% 0;
+}
+.btn-right {
+  text-align: right;
+  margin: 1% 1.5em 1% 0;
+}
+
+ /**
+ *
+ *  End of Styles for button and submit buttons
+ *
+ **/
+
+/**
+*  Helpers classes
+*
+**/
+
+.scrollable{
+  overflow: auto;
+}
+
+.text-white{
+  color: #fff !important;
+ }
+
+.center {
+  text-align: center;
+}
+
+.inline {
+  display: inline;
+}
+
+.default span.first {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.inverse span.first {
+  font-family: quicksandregular;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+p.help {
+  font-style: italic;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+/**
+ * login page theming
+ **/
+.page-userAccess{
+  background: url('forms/images/login-bg.png') repeat-x scroll left top #048E6F;
+  background-attachment: fixed;
+  margin: 0 auto;
+}
+
+.page-userAccess a{
+  text-decoration: none;
+  color: #048e6f;
+  font-size: 14px;
+}
+
+.login-header{
+  margin: 1.5em auto 2em;
+}
+
+.page-userAccess .content{
+  width: 280px;
+  margin: auto;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding: 0 25px 25px;
+  font-family: quicksandregular;
+}
+
+.page-userAccess .content center h2{
+  
+  font-weight: normal;
+  margin: 1em 0 1.5em;
+  color: #333;
+}
+
+.page-userAccess .content > center{
+  margin-bottom: 1.5em;
+}
+
+.page-userAccess .field-container{
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.page-userAccess .field-container input[type="text"],
+.page-userAccess .field-container input[type="password"]{
+ padding: 8px 0px 8px 48px;
+ font-family: quicksandregular;
+ font-size: 14px;
+ width: 100%;
+ margin: 0;‌​
+ outline: none;
+ background-color: none;
+ box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+  border: 1px solid #e6e6e6\9;
+}
+
+.page-userAccess .field-container input[type="text"] + span,
+.page-userAccess .field-container input[type="password"] + span{
+  position: absolute;
+  top: 0;
+  padding: 9px 12px 9px;
+  border-right: 1px solid #e6e6e6;
+  left: 0;
+}
+
+.page-userAccess .field-container input[type="text"]:focus + span,
+.page-userAccess .field-container input[type="password"]:focus + span{
+  border-right: 1px solid #39bb9d;
+}
+
+
+.page-userAccess .content button, .challenge-page .content button{
+  background: #048e6f;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  font-family: quicksandregular;
+  padding: 8px 0;
+  border-top: 2px solid #1ba889;
+  margin-top: 10px;
+}
+
+div[class*="col-"]{
+  float: left;
+  width: 50%;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+/* Styles */
+  .page-userAccess .content{
+    width: 260px;
+  }
+  div[class*="col-"]{
+    width: 98%;
+  }
+}
+
+@media only screen and (max-width : 768px){
+  div[class*="col-"]{
+    width: 100%;
+  }
+  .page-userAccess .content{
+    width: 92%;
+  }
+}
+
+@media only screen and (max-width : 1024px){
+  .page-userAccess .content{
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1367px) and (max-width : 1920px){
+  .page-userAccess .content{
+    width: 30%;
+  }
+}
+
+.attribution {
+  font-size: 10px;
+  float: right;
+  margin-right: 2px;
+}
+
+.connection-status {
+  text-align: center;
+  width: 375px;
+  margin: 0 auto 20px auto;
+  background: #faebcc;
+  padding: 5px 5px 25px 5px;
+  position: relative;
+}
+
+@media only screen and (max-width : 1024px){
+  .default, .inverse{
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width : 767px){
+  .default, .inverse{
+    width:100%;
+  }
+
+}
+
+/**
+  * Settings form styles
+  *
+  */
+
+table{
+  width: 100%;
+}
+
+th{
+  padding: 20px 0 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+td:not(.td-label){
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+td.td-label{
+  padding-left: 17px;
+  padding-top: 1.5em;
+}
+
+table tbody tr td.td-label:last-child{
+  padding-left: 0;
+}
+
+table tbody tr td:first-child{
+  width: 28%;
+  text-align: left;
+
+}
+
+table tbody tr td:first-child+td{
+  width: 22%;
+}
+
+table tbody tr td:last-child:not(.td-label){
+  text-align: left;
+  width: 50%;
+  overflow: hidden;
+}
+
+table tbody tr td:last-child:not(.td-label) 
+select:not(.ui-datepicker-year):not(.ui-datepicker-month){
+    -moz-appearance: none;
+    background: url("forms/images/green-select-arrow.png") no-repeat scroll 94% center rgba(0, 0, 0, 0);
+    text-indent: 0.01px;
+    text-overflow: "";
+    width: 106%;
+
+}
+
+table tbody tr td:last-child:not(.td-label) 
+select:not(.ui-datepicker-year):not(.ui-datepicker-month)::-ms-expand{
+  display: none;
+}
+
+table tbody tr td:last-child:not(.td-label) 
+select:not(.ui-datepicker-year):not(.ui-datepicker-month):hover{
+  border: 1px solid #39bb9d !important;
+}
+
+table tbody tr td:last-child:not(.td-label) 
+select:not(.ui-datepicker-year):not(.ui-datepicker-month):disabled{
+  opacity: .7;
+}
+
+table tbody tr td:last-child:not(.td-label) 
+select:not(.ui-datepicker-year):not(.ui-datepicker-month):disabled:hover{
+  border: 1px solid #e6e6e6 !important;
+}
+
+table tbody tr:first-child+tr{
+  border-bottom: 1px dashed #e6e6e6;
+  margin-bottom: 2em;
+}
+
+table tbody tr:first-child+tr td{
+  padding-bottom: 1.5em;
+}
+
+.header-title{
+  background: #f9f9f9;
+  border-bottom: 1px dashed #e6e6e6;
+  padding-bottom: 3em;
+  margin-bottom: 2em;
+}
+
+.header-title h1{
+  font-size: 36px;
+  color: #4d4d4d;
+}
+
+/**
+ * Checkbox trick
+ *
+ **/
+
+table tbody tr td:first-child+td input[type="checkbox"]{
+  display: none;
+}
+
+table tbody tr td:first-child+td input[type="checkbox"]+label{
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+}
+
+table tbody tr td:first-child+td input[type="checkbox"]+label:before{
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #4d4d4d;
+}
+
+table tbody tr td:first-child+td input[type="checkbox"]:checked + label:before{
+  background: url('forms/images/checked.png') no-repeat scroll center center transparent;
+}

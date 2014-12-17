@@ -1,0 +1,92 @@
+
+User 
+
+(/classes/User.js)
+
+  User is actually a function, not a class - It's implemented as a singleton, because we should only ever have one current User.  
+
+  The User function takes a callback, which will be executed when the User is loaded.
+
+  Example:
+
+  User(function(){
+    alert('current username is '+ User.get('username');
+  });
+
+
+  User management is controlled by Parse.com and the User class encapsulates the Parse.User global
+
+  User.get / User.set / User.current behaves the same as Parse.User.get / Parse.User.set / Parse.user.current
+
+  see https://parse.com/docs/js_guide#users
+
+
+
+
+
+
+Bliss
+
+(/Bliss.js)
+
+This is a singleton object that provides a group of helper methods
+ i.e Bliss.getLocalUrl('/images/panda.jpg') 
+ //Returns 'chrome-extension://[extension_id]/images/panda.jpg'
+
+
+OTHER NOTES:
+
+Form / Exercise Templates: 
+
+  Templates should start with a div with a unique top-level id
+
+  CORRECT:
+
+  <div id="my-awesome-form">
+  Welcome to form
+  ...
+
+
+  INCORRECT:
+
+  Welcome to form
+  <div id="my-awesome-form">
+
+  A form cannot start with a text node or any whitespace
+
+
+Field Types
+
+  Regular HTML fields are supported by BlissForm.  Data will be posted to parse with the name of the dataClass attribute of the form.
+  The column name is set by the id or name of the field, or it's parent in some cases.
+
+  **Note** In the template file form-name.tpl.htm - Every field must either have a name attribute or a field attribute equal to the name
+  declared in the form sub-class form-name.js - so that BlissForm can bind the data correctly
+
+  Custom Fields
+  
+  These are extensions for fields which are needed beyond the regular html fields
+
+  multistring - Provides an array of text inputs
+  nextButton  - A Button which does not submit data, but simply loads the next template (useful for informational slides of multistep forms)
+
+
+Config.js
+(/config.js)
+
+Includes the Parse App Id and other variables which differ on dev and production
+
+
+LOADING TEMPLATES
+
+BlissForm depends on asynchronosly loaded templates - if you're having issues you may need to use $(document).ready
+
+
+TIME 
+
+Time should always be measured in seconds, with microseconds as a fraction i.e 1404180782.124
+
+Use Bliss.getTime() to return current time
+Use Bliss.getInstallTime() for install time
+
+

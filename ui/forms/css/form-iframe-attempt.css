@@ -1,0 +1,56 @@
+.bliss-form button {
+  position: relative;
+  left: 50%;
+  width: 100px;
+  margin-left: -50px;
+  margin-top: 15px;
+}
+
+iframe.bliss-form {
+  width: 400px;
+  height: 95%;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  margin-left: -200px;
+  border: 1px solid black;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.bliss-form {
+  width: 100%;
+  vertical-align: top;
+}
+
+.bliss-form h1, h2 {
+  margin-top: 0px;
+}
+#intro {
+  margin: 10px 0;
+}
+
+.bliss-form .textarea-container {
+  margin-top: 15px;
+}
+.bliss-form textarea {
+  display: block;
+  width: 90%;
+}
+#gratitude-form textarea {
+  height: 5em;
+}
+.bliss-form input[type='checkbox'] {
+  margin-top: 10px;
+}
+
+.intro-text li {
+  margin-top: 10px;
+}
+.bliss-form .multi_string textarea {
+  margin-top: 10px;
+}
+
+.bliss-form textarea {
+  height: 10em;
+}

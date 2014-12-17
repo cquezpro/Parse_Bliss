@@ -1,0 +1,60 @@
+<div id="SettingsForm" class="inverse">
+      <header class="inverse-header">
+        <div class="inner clearfix">
+          <center>
+            <img src="/ui/forms/images/logo.png" alt="Bliss Logo"> 
+          </center>
+        </div>
+      </header>
+      <div class="header-title clearfix">
+        <center>
+          <h1 class="title">Settings</h1>
+          <img src="/ui/forms/images/settings-cog.png" alt="Bliss Settings"> 
+        </center>
+      </div>
+      <div class="content">
+ 
+        <div class="inner clearfix">
+          <div class="container scrollable clearfix">
+          <table>
+            <thead>
+              <th></th>
+              <th>Enabled</th>
+              <th>Frequency</th>
+            </thead>
+
+            <tbody>
+              <tr>
+              <td class="td-label"></td>
+              <td class="td-label"></td>
+              <td class="td-label"></td>
+              </tr>
+              <% $.each(exercises, function(key, exercise) { %>
+              <tr>
+                <td><%= exercise.display_name %></td>
+                <td>
+                  <input id="<%= exercise.name + '_enabled' %>" <% attributes[exercise.name + '_enabled'] ? print('checked="checked"') : '' %> type="checkbox">
+                  <label for="<%= exercise.name + '_enabled' %>"></label>
+                </td>
+
+
+
+                <td>
+                  <select name="<%= exercise.name + '_repeat' %>" id="<%= exercise.name + '_repeat' %>">
+                    <% for (x = 1; x <= 100; x++) { %>
+                      <option value="<%= x %>" <% attributes[exercise.name + '_repeat'] == x ? print('selected="selected"') :'' %>> Repeat every <%= x %> days</option>
+                    <% } %>
+                      <option value="-1" <% attributes[exercise.name + '_repeat'] == -1 ? print('selected="selected"') :'' %>> Do not schedule</option>
+                  </select>
+                </td>
+              </tr>
+
+              <% }); %>
+          </tbody>
+          </table>
+          </div>
+          </div>
+       </div>
+    <footer id="footer">
+    </footer>
+</div>

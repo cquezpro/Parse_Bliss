@@ -1,0 +1,33 @@
+The way that forms and exercises actually get deployed in the chrome extension is through ui/deploy/deploy.htm
+
+For instance, to deploy the Gratitude Journal exercise you would go to 
+
+http://bliss.local/ui/deploy/deploy.htm?exercise=GratitudeExercise
+
+Basically this allows us to circumvent some javascript security restrictions and also display multiple forms / exercises in a series, one after another i.e:
+http://bliss.local/ui/deploy/deploy.htm?exercise=GettingStartedForm,GratitudeExercise
+
+(Displays Gratitude Exercise after Getting Started form is submitted)
+
+deploy.htm is created by deploy.php
+
+deploy.php includes a number of files:
+
+    <?php require_once('core.includes.php'); ?>
+    <!-- Exercises -->
+    <?php require_once('exercises.includes.php'); ?>
+    <!-- Trackers -->
+    <?php require_once('track.includes.php'); ?>
+    <!-- Forms -->
+    <?php require_once('forms.includes.php'); ?>
+    <!-- Deploy -->
+
+To build the new deploy.htm you would modify deploy.php - or one of the includes php files, and then run
+
+php deploy.php > deploy.htm
+
+
+This means that the exercise css files and the forms css files are both included whenever an exercise or form is deployed - so we must target selectors to avoid conflicts
+
+
+

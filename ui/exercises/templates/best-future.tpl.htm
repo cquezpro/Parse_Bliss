@@ -1,0 +1,66 @@
+<div id="BestFutureExercise" class="default">
+  <header class="form-header">
+    <center><h2>bliss</h2></center>
+  </header>
+  <figure class="main-image">
+    <img src="<%= Bliss.getLocalUrl('ui/exercises/images/BestFutureBackground.jpg')  %>">
+    <img class="icon" src="<%= Bliss.getLocalUrl('images/exercise-icon.png')  %>">
+    <figcaption class="title">Best Possible Future</figcaption>
+  </figure>
+    <div class="content">
+      <div class="inner clearfix">
+      <div class="container clearfix no-headings">
+        <p><span class="first">Imagine</span> your life several years in the future. Everything has gone amazingly well for you.  You've achieved everything you could 
+      have wanted and more. You feel totally fulfilled in all aspects of your personal, social, and professional life.</p><br />
+
+        <p><span class="first">Take</span> a few minutes to describe your life in the future. Use details and imagery to engage your brain's emotional centers, describing the look, feel, taste, smell of your experiences in your best possible future. There are no right or wrong goals - it is completely determined by <em>what is important to you.</em>
+        </p>
+        <p><span class="first">Be</span> as creative as you like, but make sure you are writing about your life <b>at a specific time in the future</b> - for instance, 3 years from today. Answer these questions in any order you like and use the categories as prompts, not as set in stone.</p><br />
+      </div>
+    
+    <div class="section-header">
+      <h2 class="center">Personal</h2>
+    </div>
+
+      <div class="container">
+        <p>What skills have you mastered? How do you spend your time? What is your health / fitness level? How do you feel about yourself?</p>
+      </div>
+      <div class="container">
+        <textarea name="personal" ><%= personal %></textarea>
+        <p class="help">Example: I've studied hard and mastered Spanish. I am fluent and can watch movies without the sub-titles. I've lost 20 pounds of body fat (I now weigh 180) from consistently working out and have more energy from improving my cardiovascular fitness. I'm able to travel often, and have plenty of free time for writing and working on projects. I feel at peace with myself, have a strong sense of self-worth and pride in what I've accomplished.</p><br />
+      </div>
+   
+    <div class="section-header">
+      <h2 class="center">Social</h2>
+    </div>
+    
+      <div class="container">
+        <p>Who do you spend your time with? How do others think of you? Describe specific important relationships and how they've grown.</p>
+      </div>
+      <div class="container">
+        <textarea name="social" ><%= social %></textarea>
+        <p class="help">Example: My marriage with Katherine is strong and peaceful. We argue far less often, maybe only once every two months, and when we do, it's respectfully and with compassion. She knows she's the love of my life and no disagreement is worth putting that at risk. I spend at least 8 hours of quality time with the kids on the weekends, going to the park, watching movies, or playing games. Jane trusts me again and asks me for help when she has a problem at school.  
+        </p><br />
+      </div>
+      
+    
+    <div class="section-header">
+      <h2 class="center">Professional</h2>
+    </div>
+
+      <div class="container">
+      <p>What is your financial / work situation like? How do you spend your work day? What things have you accomplished</p>
+      </div>
+      <div class="container">
+        <textarea name="professional" ><%= professional %></textarea>
+        <p class="help">Example: I've continued my acting classes and worked hard to prepare for every audition. I routinely book speaking roles on major television shows and am able to support myself as a full-time actor, making over $200,000 a year. I continue to hone my craft and book a small role on a Cohen brother's film. I am becoming known as a high-quality character actor and have opportunities to work with the kind of actors and directors I've always admired.</p>
+        </br>
+      </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="btn-center">
+        <button id="submitButton" class="btn btn-default"><%= submit_button_text %></button>
+      </div>
+    </footer>
+</div>
